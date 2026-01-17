@@ -1,0 +1,119 @@
+[
+  {
+    "id": 6,
+    "topic": "The Langer Lab Factory",
+    "content_sourced": "Robert Langer's <a href='https://langerlab.mit.edu/'>MIT lab</a> has spawned <a href='https://news.mit.edu/2015/robert-langer-queen-elizabeth-prize-0203'>40+ companies</a> and trained <a href='https://www.achievement.org/achiever/robert-langer/'>400+ PhD students</a> who've started their own ventures. Companies include <a href='https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001682852'>Moderna</a>, <a href='https://www.crunchbase.com/organization/momenta-pharmaceuticals'>Momenta Pharmaceuticals</a>, and <a href='https://www.livingproof.com/about-us'>Living Proof</a>. His drug delivery research, funded by decades of <a href='https://reporter.nih.gov/search/GxPfvpKaIkСjRLTvFbvIGQ/projects'>NIH grants</a>, became an empire.",
+    "sources": [
+      {"name": "Langer Lab MIT", "url": "https://langerlab.mit.edu/", "type": "institutional"},
+      {"name": "MIT News - Queen Elizabeth Prize", "url": "https://news.mit.edu/2015/robert-langer-queen-elizabeth-prize-0203", "type": "news"},
+      {"name": "Academy of Achievement - Langer Profile", "url": "https://www.achievement.org/achiever/robert-langer/", "type": "profile"},
+      {"name": "Moderna SEC Filings", "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001682852", "type": "regulatory"},
+      {"name": "NIH Reporter - Langer Grants", "url": "https://reporter.nih.gov/search/GxPfvpKaIkСjRLTvFbvIGQ/projects", "type": "grant"}
+    ],
+    "significance": "breakthrough",
+    "post": "Bob Langer's MIT lab is basically a biotech startup factory. 40+ companies including Moderna. 400+ PhD students who've started their own ventures. Decades of NIH grants funding drug delivery research that became an entire industry vertical."
+  },
+  {
+    "id": 1,
+    "topic": "Moderna's MIT Origins",
+    "content_sourced": "Moderna was <a href='https://www.sec.gov/Archives/edgar/data/1682852/000119312518323562/d577473ds1.htm'>founded in 2010</a> based on mRNA research from <a href='https://hsci.harvard.edu/people/derrick-rossi-phd'>Derrick Rossi's lab at Harvard</a> and technology licensed from MIT. The company's foundational IP came from work on modified mRNA, building on discoveries about <a href='https://doi.org/10.1016/j.cell.2005.08.012'>nucleoside modifications</a> by Karikó and Weissman. From academic research to a <a href='https://www.google.com/finance/quote/MRNA:NASDAQ'>$100B+ market cap</a> during COVID.",
+    "sources": [
+      {"name": "Moderna S-1 Filing", "url": "https://www.sec.gov/Archives/edgar/data/1682852/000119312518323562/d577473ds1.htm", "type": "regulatory"},
+      {"name": "Derrick Rossi - Harvard", "url": "https://hsci.harvard.edu/people/derrick-rossi-phd", "type": "institutional"},
+      {"name": "Karikó & Weissman 2005 Paper", "url": "https://doi.org/10.1016/j.cell.2005.08.012", "type": "publication"}
+    ],
+    "significance": "breakthrough"
+  },
+  {
+    "id": 2,
+    "topic": "CRISPR Therapeutics and UC Berkeley",
+    "content_sourced": "<a href='https://vcresearch.berkeley.edu/faculty/jennifer-doudna'>Jennifer Doudna's</a> CRISPR-Cas9 work at UC Berkeley, published in the landmark <a href='https://doi.org/10.1126/science.1225829'>2012 Science paper</a> and funded by <a href='https://www.hhmi.org/scientists/jennifer-doudna'>HHMI</a> and NIH, spawned multiple companies. The <a href='https://www.nature.com/articles/d41586-022-00629-y'>Broad Institute vs UC Berkeley patent battle</a> highlighted how much commercial value flows from academic gene editing research. Doudna co-founded <a href='https://www.cariboubio.com/'>Caribou Biosciences</a> and <a href='https://www.mammothbio.com/'>Mammoth Biosciences</a>.",
+    "sources": [
+      {"name": "Doudna Lab - UC Berkeley", "url": "https://vcresearch.berkeley.edu/faculty/jennifer-doudna", "type": "institutional"},
+      {"name": "Jinek et al. 2012 - CRISPR Paper", "url": "https://doi.org/10.1126/science.1225829", "type": "publication"},
+      {"name": "HHMI - Jennifer Doudna", "url": "https://www.hhmi.org/scientists/jennifer-doudna", "type": "institutional"},
+      {"name": "Nature - CRISPR Patent Battle", "url": "https://www.nature.com/articles/d41586-022-00629-y", "type": "news"}
+    ],
+    "significance": "breakthrough"
+  },
+  {
+    "id": 8,
+    "topic": "CAR-T's Academic Journey",
+    "content_sourced": "CAR-T therapy originated from <a href='https://www.med.upenn.edu/apps/faculty/index.php/g275/p8574254'>Carl June's lab at UPenn</a>, funded by NIH and the <a href='https://www.lls.org/'>Leukemia & Lymphoma Society</a>. Novartis <a href='https://www.novartis.com/news/media-releases/novartis-and-university-pennsylvania-announce-exclusive-global-license-agreement-novel-cancer-immunotherapy'>licensed the technology in 2012</a>, leading to <a href='https://www.fda.gov/news-events/press-announcements/fda-approval-brings-first-gene-therapy-united-states'>FDA approval of Kymriah in 2017</a>—the first CAR-T therapy. Penn's royalty stream from that deal is substantial.",
+    "sources": [
+      {"name": "Carl June - Penn Medicine", "url": "https://www.med.upenn.edu/apps/faculty/index.php/g275/p8574254", "type": "institutional"},
+      {"name": "Novartis-Penn License Announcement", "url": "https://www.novartis.com/news/media-releases/novartis-and-university-pennsylvania-announce-exclusive-global-license-agreement-novel-cancer-immunotherapy", "type": "press"},
+      {"name": "FDA Kymriah Approval", "url": "https://www.fda.gov/news-events/press-announcements/fda-approval-brings-first-gene-therapy-united-states", "type": "regulatory"}
+    ],
+    "significance": "breakthrough"
+  },
+  {
+    "id": 9,
+    "topic": "BioNTech and University of Mainz",
+    "content_sourced": "BioNTech was <a href='https://investors.biontech.de/static-files/bad8db18-c0c6-4d4a-8e84-89b5dce0a3a9'>founded by</a> husband-wife team <a href='https://www.unimedizin-mainz.de/en/iii-medical-clinic/team/scientific-staff/prof-dr-med-ugur-sahin.html'>Uğur Şahin</a> and Özlem Türeci from University of Mainz. Their mRNA cancer vaccine research, funded by German government grants and the <a href='https://www.bmbf.de/bmbf/en/home/home_node.html'>Federal Ministry of Education</a>, pivoted to COVID in January 2020. Academic oncology immunotherapy expertise saving millions.",
+    "sources": [
+      {"name": "BioNTech IPO Prospectus", "url": "https://investors.biontech.de/static-files/bad8db18-c0c6-4d4a-8e84-89b5dce0a3a9", "type": "regulatory"},
+      {"name": "Uğur Şahin - University of Mainz", "url": "https://www.unimedizin-mainz.de/en/iii-medical-clinic/team/scientific-staff/prof-dr-med-ugur-sahin.html", "type": "institutional"}
+    ],
+    "significance": "breakthrough"
+  },
+  {
+    "id": 23,
+    "topic": "UPenn Gene Therapy Empire",
+    "content_sourced": "UPenn has become the dominant gene therapy university. <a href='https://gtp.med.upenn.edu/about/james-m-wilson-md-phd'>Jim Wilson's lab</a> (AAV vectors), <a href='https://www.med.upenn.edu/apps/faculty/index.php/g275/p8574254'>Carl June</a> (CAR-T), and <a href='https://www.med.upenn.edu/apps/faculty/index.php/g275/p8122973'>Jean Bennett</a> (Luxturna) all there. <a href='https://sparktx.com/'>Spark Therapeutics</a>, <a href='https://www.roche.com/media/releases/med-cor-2019-02-25'>sold to Roche for $4.3B</a>, came from UPenn. The <a href='https://www.med.upenn.edu/gtp/'>Gene Therapy Program</a> anchors it.",
+    "sources": [
+      {"name": "Jim Wilson - Penn GTP", "url": "https://gtp.med.upenn.edu/about/james-m-wilson-md-phd", "type": "institutional"},
+      {"name": "Jean Bennett - Penn Medicine", "url": "https://www.med.upenn.edu/apps/faculty/index.php/g275/p8122973", "type": "institutional"},
+      {"name": "Roche-Spark Acquisition", "url": "https://www.roche.com/media/releases/med-cor-2019-02-25", "type": "press"},
+      {"name": "Penn Gene Therapy Program", "url": "https://www.med.upenn.edu/gtp/", "type": "institutional"}
+    ],
+    "significance": "breakthrough"
+  },
+  {
+    "id": 4,
+    "topic": "Stanford's OTL Dominance",
+    "content_sourced": "<a href='https://otl.stanford.edu/'>Stanford's Office of Technology Licensing</a> has generated over <a href='https://otl.stanford.edu/about/about-us/otl-annual-reports'>$2B in cumulative revenue</a>. Key biotech spinouts include the <a href='https://www.gene.com/gene/about/history'>Genentech founding</a> (1976, from UCSF/Stanford collaboration), and more recently <a href='https://guardanthealth.com/'>Guardant Health</a>. Stanford <a href='https://otl.stanford.edu/about/about-us/history'>pioneered the modern tech transfer model</a> in 1970 under Niels Reimers.",
+    "sources": [
+      {"name": "Stanford OTL", "url": "https://otl.stanford.edu/", "type": "institutional"},
+      {"name": "OTL Annual Reports", "url": "https://otl.stanford.edu/about/about-us/otl-annual-reports", "type": "institutional"},
+      {"name": "Genentech History", "url": "https://www.gene.com/gene/about/history", "type": "corporate"},
+      {"name": "Stanford OTL History", "url": "https://otl.stanford.edu/about/about-us/history", "type": "institutional"}
+    ],
+    "significance": "major"
+  },
+  {
+    "id": 3,
+    "topic": "Flagship Pioneering's Academic Model",
+    "content_sourced": "<a href='https://www.flagshippioneering.com/'>Flagship Pioneering</a>, which created Moderna, has a unique model: they don't wait for academics to start companies. Founded by <a href='https://www.flagshippioneering.com/people/noubar-afeyan'>Noubar Afeyan</a>, they identify promising academic research, create companies around it, and install professional management. Founded <a href='https://www.flagshippioneering.com/companies'>40+ companies</a> with $30B+ in aggregate value.",
+    "sources": [
+      {"name": "Flagship Pioneering", "url": "https://www.flagshippioneering.com/", "type": "corporate"},
+      {"name": "Noubar Afeyan Bio", "url": "https://www.flagshippioneering.com/people/noubar-afeyan", "type": "corporate"},
+      {"name": "Flagship Companies", "url": "https://www.flagshippioneering.com/companies", "type": "corporate"}
+    ],
+    "significance": "major"
+  },
+  {
+    "id": 5,
+    "topic": "SBIR/STTR as Biotech Launchpad",
+    "content_sourced": "NIH's <a href='https://seed.nih.gov/'>SBIR/STTR program</a> has funded early stages of companies including Genzyme, Amgen, and Geron. <a href='https://www.sbir.gov/about'>Phase I grants ($275K)</a> and Phase II ($1M+) provide non-dilutive funding that academic founders use to de-risk before VC rounds. The <a href='https://www.sbir.gov/awards/annual-reports'>program database</a> shows thousands of biotech awards.",
+    "sources": [
+      {"name": "NIH SEED (SBIR/STTR)", "url": "https://seed.nih.gov/", "type": "government"},
+      {"name": "SBIR.gov - About", "url": "https://www.sbir.gov/about", "type": "government"},
+      {"name": "SBIR Awards Database", "url": "https://www.sbir.gov/awards/annual-reports", "type": "government"}
+    ],
+    "significance": "major"
+  },
+  {
+    "id": 17,
+    "topic": "HHMI's Long-Term Bets",
+    "content_sourced": "<a href='https://www.hhmi.org/'>Howard Hughes Medical Institute</a> funds investigators, not projects—<a href='https://www.hhmi.org/news/hhmi-announces-largest-ever-competition-investigators'>$200M+/year</a> to researchers with freedom to pursue risky science. HHMI alumni have founded dozens of biotechs. <a href='https://www.hhmi.org/scientists/jennifer-doudna'>Jennifer Doudna</a>, <a href='https://www.hhmi.org/scientists/david-r-liu'>David Liu</a> (base editing), and <a href='https://www.hhmi.org/scientists/feng-zhang'>Feng Zhang</a> were all HHMI investigators.",
+    "sources": [
+      {"name": "HHMI", "url": "https://www.hhmi.org/", "type": "institutional"},
+      {"name": "HHMI Investigator Competition", "url": "https://www.hhmi.org/news/hhmi-announces-largest-ever-competition-investigators", "type": "news"},
+      {"name": "Jennifer Doudna - HHMI", "url": "https://www.hhmi.org/scientists/jennifer-doudna", "type": "institutional"},
+      {"name": "David Liu - HHMI", "url": "https://www.hhmi.org/scientists/david-r-liu", "type": "institutional"},
+      {"name": "Feng Zhang - HHMI", "url": "https://www.hhmi.org/scientists/feng-zhang", "type": "institutional"}
+    ],
+    "significance": "major"
+  }
+]
