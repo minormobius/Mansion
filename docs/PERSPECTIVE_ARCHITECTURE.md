@@ -94,6 +94,52 @@ Don't predefine tensions. Instead, after each thesis:
 3. Highest-rated perspective delivers antithesis
 4. This creates *emergent* rock-paper-scissors based on actual content
 
+### Option 4: Desire-Path Tension Discovery (PREFERRED)
+
+Don't prescribe axes OR pairwise tensions. Instead:
+
+1. **Run dialogues** with perspectives choosing freely who to critique
+2. **Observers log** which perspectives actually clashed, on what grounds
+3. **Axes emerge** from accumulated observations
+
+```yaml
+# tension_log.yaml (accumulated over sessions)
+
+observed_tensions:
+  - session: "folkman-years-2024-01-17"
+    clash:
+      attacker: "Scientist"
+      defender: "Entrepreneur"
+      axis_claimed: "evidence_quality"
+      specific_point: "survivorship bias in contrarian narrative"
+
+  - session: "folkman-years-2024-01-17"
+    clash:
+      attacker: "Engineer"
+      defender: "Scientist"
+      axis_claimed: "theory_vs_practice"
+      specific_point: "mechanism understanding not required for working system"
+
+  - session: "folkman-years-2024-01-17"
+    clash:
+      attacker: "Entrepreneur"
+      defender: "Engineer"
+      axis_claimed: "vision_vs_incrementalism"
+      specific_point: "parameter exploration vs paradigm revelation"
+
+# After N sessions, analyze:
+emergent_axes:
+  - name: "evidence_quality"
+    frequent_attackers: ["Scientist", "Regulator"]
+    frequent_defenders: ["Entrepreneur", "Investor"]
+
+  - name: "theory_vs_practice"
+    frequent_attackers: ["Engineer", "Clinician"]
+    frequent_defenders: ["Scientist", "Theorist"]
+```
+
+The axes become **discovered through use** rather than prescribed. This is more honest - we're not claiming to know the topology in advance, we're letting it reveal itself through actual intellectual combat.
+
 ---
 
 ## Memory File Format
