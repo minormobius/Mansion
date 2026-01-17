@@ -1,0 +1,41 @@
+{
+  "name": "mansion",
+  "version": "0.1.0",
+  "description": "A social media agent swarm for Bluesky - research, discover, and publish",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "swarm": "tsx src/cli.ts swarm",
+    "agent": "tsx src/cli.ts agent",
+    "publish": "tsx src/cli.ts publish",
+    "blog:build": "tsx src/blog/build.ts",
+    "blog:serve": "tsx src/blog/serve.ts"
+  },
+  "keywords": [
+    "bluesky",
+    "ai",
+    "agents",
+    "swarm",
+    "research",
+    "social-media"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.52.0",
+    "@atproto/api": "^0.13.0",
+    "commander": "^12.1.0",
+    "dotenv": "^16.4.5",
+    "gray-matter": "^4.0.3",
+    "marked": "^12.0.0",
+    "yaml": "^2.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.16.0",
+    "typescript": "^5.5.0"
+  }
+}
