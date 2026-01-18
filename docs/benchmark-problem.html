@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Benchmark Problem | Mansion Research</title>
+  <style>
+    :root {
+      --bg: #fafafa;
+      --text: #1a1a2e;
+      --accent: #4361ee;
+      --muted: #666;
+      --card-bg: #fff;
+      --border: #e0e0e0;
+      --warning: #dc2626;
+      --success: #059669;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1a1a2e;
+        --text: #eee;
+        --accent: #7b8cff;
+        --muted: #aaa;
+        --card-bg: #252542;
+        --border: #3a3a5e;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      line-height: 1.8;
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: var(--bg);
+      color: var(--text);
+    }
+    h1 { font-size: 2.5rem; margin-bottom: 0.5rem; letter-spacing: -0.02em; }
+    h2 { font-size: 1.75rem; margin-top: 2.5rem; border-bottom: 2px solid var(--border); padding-bottom: 0.5rem; }
+    h3 { font-size: 1.25rem; margin-top: 2rem; color: var(--accent); }
+    .subtitle { color: var(--muted); font-size: 1.1rem; margin-bottom: 2rem; font-style: italic; }
+    .dateline { color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; }
+
+    blockquote {
+      border-left: 4px solid var(--accent);
+      margin: 2rem 0;
+      padding: 1rem 1.5rem;
+      background: var(--card-bg);
+      font-style: italic;
+    }
+    blockquote.warning {
+      border-left-color: var(--warning);
+    }
+
+    a { color: var(--accent); }
+    p { margin: 1.25rem 0; }
+
+    .benchmark-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .benchmark-card h4 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .benchmark-card .score {
+      font-size: 0.85rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 12px;
+      background: var(--accent);
+      color: white;
+    }
+    .benchmark-card .meta {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 0.75rem;
+    }
+    .benchmark-card .problems {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+    .benchmark-card .problems strong {
+      color: var(--warning);
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+    }
+    .comparison-table th, .comparison-table td {
+      padding: 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .comparison-table th {
+      background: var(--card-bg);
+      font-weight: 600;
+    }
+    .comparison-table .gap {
+      color: var(--warning);
+      font-weight: 600;
+    }
+
+    .stat-highlight {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      text-align: center;
+    }
+    .stat-highlight .number {
+      font-size: 3rem;
+      font-weight: bold;
+      color: var(--warning);
+    }
+    .stat-highlight .label {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+    .stat-highlight .source {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.5rem;
+    }
+
+    .study-box {
+      background: linear-gradient(135deg, var(--card-bg) 0%, rgba(220, 38, 38, 0.05) 100%);
+      border: 1px solid var(--warning);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .study-box h4 {
+      margin: 0 0 0.75rem 0;
+      color: var(--warning);
+    }
+    .study-box .finding {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .sources {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .toc {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+    .toc h3 {
+      margin: 0 0 1rem 0;
+      font-size: 1rem;
+      color: var(--text);
+    }
+    .toc a {
+      display: block;
+      margin: 0.5rem 0;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <p><a href="index.html">&larr; Mansion Research</a> · <a href="coding-agents.html">The Coding Agent Wars</a></p>
+    <h1>The Benchmark Problem</h1>
+    <p class="subtitle">Why AI coding scores don't mean what you think they mean</p>
+    <p class="dateline">January 2026 | Deep dive from <a href="coding-agents.html">The Coding Agent Wars</a></p>
+  </header>
+
+  <div class="stat-highlight">
+    <div class="number">19%</div>
+    <div class="label">Slower with AI tools (experienced developers, familiar codebases)</div>
+    <div class="source">— <a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/">METR Randomized Controlled Trial, July 2025</a></div>
+  </div>
+
+  <div class="toc">
+    <h3>Contents</h3>
+    <a href="#goodhart">1. Goodhart's Law Comes for AI</a>
+    <a href="#benchmarks">2. The Major Benchmarks (And Their Flaws)</a>
+    <a href="#contamination">3. The Contamination Crisis</a>
+    <a href="#gap">4. The Benchmark-Reality Gap</a>
+    <a href="#metr">5. The METR Bombshell</a>
+    <a href="#implications">6. What This Actually Means</a>
+  </div>
+
+  <section id="goodhart">
+    <h2>Goodhart's Law Comes for AI</h2>
+
+    <p>In 1975, British economist Charles Goodhart observed: "When a measure becomes a target, it ceases to be a good measure." The AI industry has turned this principle into a spectator sport.</p>
+
+    <p>Every model release trumpets benchmark scores. <a href="https://openai.com/index/introducing-gpt-5-2-codex/">GPT-5.2-Codex achieves state-of-the-art on SWE-Bench Pro</a>. <a href="https://www.anthropic.com/engineering/claude-code-best-practices">Claude Sonnet 4.5 hits 77.2% on SWE-bench Verified</a>. The numbers go up. The leaderboards update. The press releases flow.</p>
+
+    <p>But what do these numbers actually tell us? <a href="https://fourweekmba.com/the-goodharts-law-trap-when-ai-metrics-become-useless/">As one analysis puts it</a>:</p>
+
+    <blockquote class="warning">"High HumanEval scores convince companies to deploy AI coding assistants. The assistants produce code that looks correct, passes simple tests, but fails catastrophically in production... Every AI company races up benchmark leaderboards. The leaderboards don't measure progress toward AGI; they measure progress toward gaming leaderboards."</blockquote>
+
+    <p>The problem isn't that benchmarks are useless. It's that they've become targets—and the distance between "optimized for benchmark" and "useful in production" grows wider each year.</p>
+  </section>
+
+  <section id="benchmarks">
+    <h2>The Major Benchmarks (And Their Flaws)</h2>
+
+    <div class="benchmark-card">
+      <h4>
+        <span><a href="https://www.swebench.com/">SWE-Bench</a></span>
+        <span class="score">Top: ~70% Verified</span>
+      </h4>
+      <div class="meta">Princeton, 2023 | Real GitHub issues from popular Python repos</div>
+      <p>The current industry standard. Models receive a GitHub issue description and must produce a patch that passes the repo's test suite. Widely cited by Anthropic, OpenAI, and others.</p>
+      <div class="problems">
+        <strong>Known Problems:</strong>
+        <ul>
+          <li><a href="https://runloop.ai/blog/swe-bench-deep-dive-unmasking-the-limitations-of-a-popular-benchmark">31% of tests are too weak</a> to catch incorrect fixes</li>
+          <li><a href="https://openai.com/index/introducing-swe-bench-verified/">Unit tests often overly specific or unrelated to the issue</a> (OpenAI's own analysis)</li>
+          <li>Many samples have <a href="https://www.vals.ai/benchmarks/swebench">underspecified issue descriptions</a></li>
+          <li>Focuses only on Python; limited language diversity</li>
+          <li>Tasks are pre-filtered to remove ambiguous issues—unlike real bugs</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="benchmark-card">
+      <h4>
+        <span><a href="https://scale.com/leaderboard/swe_bench_pro_public">SWE-Bench Pro</a></span>
+        <span class="score">Top: ~23%</span>
+      </h4>
+      <div class="meta">Scale AI + academia, 2025 | Multi-file, long-horizon tasks</div>
+      <p>Created because original SWE-Bench became "too easy." Tests complex, enterprise-scale engineering across multiple files and languages.</p>
+      <div class="problems">
+        <strong>The Reality Check:</strong>
+        <ul>
+          <li>Top models (GPT-5, Claude Opus 4.1) score only <a href="https://arxiv.org/html/2509.16941v1">~23% vs 70%+ on Verified</a></li>
+          <li>Still underrepresents Java, C++, Rust—widely-used enterprise languages</li>
+          <li>"Real-world" but still isolated from org dynamics, legacy systems, unclear requirements</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="benchmark-card">
+      <h4>
+        <span><a href="https://klu.ai/glossary/humaneval-benchmark">HumanEval</a></span>
+        <span class="score">Top: 95%+</span>
+      </h4>
+      <div class="meta">OpenAI, 2021 | 164 Python algorithm problems</div>
+      <p>The original code generation benchmark. Tests isolated function completion with docstrings. Once meaningful; now essentially solved and heavily contaminated.</p>
+      <div class="problems">
+        <strong>Known Problems:</strong>
+        <ul>
+          <li><a href="https://www.johal.in/livebench-pythia-questions-python-contamination-free-benchmarks-2026/">87% contamination rates exceeding 30%</a> (EleutherAI 2025 audit)</li>
+          <li>Scores inflated by <a href="https://www.emergentmind.com/topics/humaneval-coding-benchmark">up to 25%</a> for post-2023 models</li>
+          <li>Tasks are <a href="https://www.statology.org/how-to-interpret-humaneval-can-this-ai-actually-code/">algorithm-focused</a>, not practical software development</li>
+          <li>No file I/O, APIs, frameworks, databases—the actual work</li>
+          <li><a href="https://huggingface.co/blog/leaderboard-bigcodebench">Top models see 19.6–47.7 point drops</a> on transformed tasks, exposing memorization</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="benchmark-card">
+      <h4>
+        <span><a href="https://www.tbench.ai/">Terminal-Bench</a></span>
+        <span class="score">Top: ~50% (hard)</span>
+      </h4>
+      <div class="meta">Stanford/Laude Institute, 2025 | Real terminal environment tasks</div>
+      <p>Tests AI agents on actual sysadmin/devops work: compiling code, training models, setting up servers. Featured on <a href="https://snorkel.ai/blog/terminal-bench-2-0-raising-the-bar-for-ai-agent-evaluation/">Claude 4 model card</a>.</p>
+      <div class="problems">
+        <strong>Strengths & Limits:</strong>
+        <ul>
+          <li>More realistic than algorithm puzzles—actual terminal workflows</li>
+          <li>No model scored above 50% on hard tasks at launch</li>
+          <li>Still ~100 tasks in beta—limited coverage</li>
+          <li>Terminal-only; doesn't test IDE workflows, code review, collaboration</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>What's Missing From All of Them</h3>
+
+    <p><a href="https://arxiv.org/html/2509.16941v1">The SWE-Bench Pro paper</a> acknowledges fundamental gaps:</p>
+
+    <blockquote>"Real-world software engineering encompasses broader activities such as system design, code review, documentation, and architectural decisions that are not captured in the current benchmark structure."</blockquote>
+
+    <p>Benchmarks test code generation. Software engineering is system design, trade-off navigation, stakeholder communication, technical debt management, security thinking, and code generation. The measured slice is perhaps 20% of the job.</p>
+  </section>
+
+  <section id="contamination">
+    <h2>The Contamination Crisis</h2>
+
+    <p>The most damning problem with coding benchmarks isn't their design—it's that models have already seen the answers.</p>
+
+    <table class="comparison-table">
+      <tr>
+        <th>Finding</th>
+        <th>Source</th>
+        <th>Implication</th>
+      </tr>
+      <tr>
+        <td>87% of popular benchmarks show >30% contamination</td>
+        <td><a href="https://www.johal.in/livebench-pythia-questions-python-contamination-free-benchmarks-2026/">EleutherAI 2025</a></td>
+        <td>Most leaderboard comparisons are invalid</td>
+      </tr>
+      <tr>
+        <td>8-18% HumanEval overlap with training data</td>
+        <td><a href="https://www.emergentmind.com/topics/humaneval-coding-benchmark">Multiple studies</a></td>
+        <td>Models may be recalling, not reasoning</td>
+      </tr>
+      <tr>
+        <td>Python scores inflated up to 25%</td>
+        <td><a href="https://www.emergentmind.com/topics/humaneval-coding-benchmark">Contamination audits</a></td>
+        <td>Post-2023 models appear better than they are</td>
+      </tr>
+      <tr>
+        <td>ChatGPT replicates original HumanEval errors</td>
+        <td><a href="https://www.emergentmind.com/topics/humaneval-coding-benchmark">Production analysis</a></td>
+        <td>Evidence of benchmark overfitting</td>
+      </tr>
+      <tr>
+        <td>19.6-47.7 point drops on transformed tasks</td>
+        <td><a href="https://huggingface.co/blog/leaderboard-bigcodebench">BigCodeBench study</a></td>
+        <td>High scores don't transfer to novel problems</td>
+      </tr>
+    </table>
+
+    <p>The contamination problem creates a vicious cycle:</p>
+
+    <ol>
+      <li>Benchmark becomes popular</li>
+      <li>Benchmark data appears in training corpora (GitHub, StackOverflow, papers)</li>
+      <li>Models "learn" the benchmark</li>
+      <li>Scores improve without capability improvement</li>
+      <li>New benchmark created to escape contamination</li>
+      <li>New benchmark becomes popular...</li>
+    </ol>
+
+    <p>Efforts like <a href="https://livecodebench.github.io/">LiveCodeBench</a> use time-split datasets with problems created after model training cutoffs. But even this is a rearguard action—contamination finds a way.</p>
+  </section>
+
+  <section id="gap">
+    <h2>The Benchmark-Reality Gap</h2>
+
+    <p>Even setting aside contamination, benchmark performance doesn't predict production utility.</p>
+
+    <p><a href="https://arxiv.org/html/2509.19708v1">A major 2025 study</a> examining AI code generation deployment at scale concluded:</p>
+
+    <blockquote>"The gap between benchmark performance and comprehensive production utility across the full development lifecycle remains largely unexplored in the literature... Real-world software development involves working with large, evolving codebases, collaborating across teams with different coding standards, integrating with existing toolchains, and navigating the social and organizational dynamics that influence technology adoption."</blockquote>
+
+    <p>What benchmarks measure vs. what matters:</p>
+
+    <table class="comparison-table">
+      <tr>
+        <th>Benchmarks Measure</th>
+        <th>Production Requires</th>
+        <th class="gap">Gap</th>
+      </tr>
+      <tr>
+        <td>Isolated function completion</td>
+        <td>Multi-system integration</td>
+        <td class="gap">Severe</td>
+      </tr>
+      <tr>
+        <td>Clear problem specifications</td>
+        <td>Ambiguous requirements</td>
+        <td class="gap">Severe</td>
+      </tr>
+      <tr>
+        <td>Small, clean codebases</td>
+        <td>Legacy spaghetti with tribal knowledge</td>
+        <td class="gap">Severe</td>
+      </tr>
+      <tr>
+        <td>Test-passing code</td>
+        <td>Maintainable, secure, performant code</td>
+        <td class="gap">Moderate</td>
+      </tr>
+      <tr>
+        <td>Solo task completion</td>
+        <td>Team collaboration, code review</td>
+        <td class="gap">Not measured</td>
+      </tr>
+      <tr>
+        <td>Greenfield solutions</td>
+        <td>Incremental changes to existing systems</td>
+        <td class="gap">Moderate</td>
+      </tr>
+    </table>
+
+    <p><a href="https://www.greptile.com/state-of-ai-coding-2025">The State of AI Coding 2025 report</a> notes: "While benchmarks provide standardized comparison across models, no single benchmark captures all real-world capabilities."</p>
+  </section>
+
+  <section id="metr">
+    <h2>The METR Bombshell</h2>
+
+    <p>In July 2025, METR (an AI safety organization) published the most rigorous study to date on AI coding tool impact. The results challenged everything.</p>
+
+    <div class="study-box">
+      <h4><a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/">METR Randomized Controlled Trial</a></h4>
+      <div class="finding">Finding: Developers using AI tools took 19% longer to complete tasks</div>
+      <p><strong>Methodology:</strong> 16 experienced developers from large open-source repos (avg 22k+ stars, 1M+ lines). 246 real issues (bugs, features, refactors) randomly assigned to allow or disallow AI. Double-blind evaluation.</p>
+      <p><strong>Key details:</strong></p>
+      <ul>
+        <li>Developers <em>expected</em> AI would speed them up by 24%</li>
+        <li>Developers <em>believed</em> AI had sped them up by 20% (even after the slowdown)</li>
+        <li>Actual result: 19% slower with AI tools</li>
+      </ul>
+    </div>
+
+    <p>The study's authors note the critical distinction: these were <strong>experienced developers</strong> working on <strong>familiar codebases</strong> they'd contributed to for years. The context where AI should help most—it didn't.</p>
+
+    <p>Possible explanations from the study:</p>
+
+    <ul>
+      <li><strong>Context overhead:</strong> Time spent explaining codebase to AI exceeded time saved</li>
+      <li><strong>Review burden:</strong> Verifying AI output took longer than writing code directly</li>
+      <li><strong>Misdirection:</strong> AI suggestions led developers down wrong paths</li>
+      <li><strong>Familiar codebases:</strong> Developers already knew the code; AI added friction, not insight</li>
+    </ul>
+
+    <h3>The Counterpoint</h3>
+
+    <p>A different study examined enterprise deployment with different results. <a href="https://arxiv.org/html/2509.19708v1">Researchers tracking 300 engineers over 12 months</a> found:</p>
+
+    <ul>
+      <li>33.8% reduction in cycle time</li>
+      <li>29.8% reduction in review time</li>
+      <li>Overall 31.8% efficiency gain</li>
+    </ul>
+
+    <p>The difference? This was a corporate environment with integrated tooling, structured workflows, and presumably less familiarity with each codebase. AI may help most where human context is weakest—the opposite of what benchmarks measure.</p>
+  </section>
+
+  <section id="implications">
+    <h2>What This Actually Means</h2>
+
+    <h3>For Developers</h3>
+
+    <p>Benchmark scores tell you approximately nothing about whether an AI tool will help <em>you</em> with <em>your</em> codebase. The METR study suggests that for experienced developers on familiar code, AI may actively slow you down.</p>
+
+    <p>The tools likely help most when:</p>
+    <ul>
+      <li>You're unfamiliar with the codebase or technology</li>
+      <li>The task is well-specified and isolated</li>
+      <li>You can quickly verify correctness</li>
+      <li>The code doesn't require deep domain knowledge</li>
+    </ul>
+
+    <h3>For Companies</h3>
+
+    <p>Vendor benchmark claims should be treated as marketing. A model scoring 77% on SWE-bench Verified doesn't mean 77% of your engineering work will be automated. It means the model can solve 77% of specifically-curated, clearly-specified, isolated Python issues with adequate test coverage.</p>
+
+    <p>Your mileage will vary based on: codebase complexity, documentation quality, test coverage, developer experience levels, security requirements, and organizational factors no benchmark measures.</p>
+
+    <h3>For Investors</h3>
+
+    <p>The $29B Cursor valuation and $350B Anthropic round are bets that benchmark improvements translate to production value at scale. The METR study suggests this translation is not automatic. The enterprise deployment study suggests it may require significant integration investment.</p>
+
+    <h3>For the Industry</h3>
+
+    <p>The benchmark arms race has produced exactly what Goodhart predicted: optimized metrics, unclear utility. <a href="https://fourweekmba.com/the-goodharts-law-trap-when-ai-metrics-become-useless/">As one analysis observes</a>:</p>
+
+    <blockquote class="warning">"New benchmarks get created to escape gaming. Models immediately start optimizing for them. Within months, the new benchmarks are gamed too. We're in an infinite loop of creating and destroying metrics."</blockquote>
+
+    <p>The honest conclusion: we don't have good measures for AI coding capability. The measures we have are contaminated, narrow, and don't predict real-world impact. The impressive numbers in press releases should be treated as what they are—marketing claims, not engineering specifications.</p>
+
+    <h3>The Path Forward</h3>
+
+    <p>Better evaluation requires:</p>
+
+    <ul>
+      <li><strong>Time-split datasets</strong> (like <a href="https://livecodebench.github.io/">LiveCodeBench</a>) that can't be pre-memorized</li>
+      <li><strong>Realistic task complexity</strong> including ambiguity, legacy code, organizational constraints</li>
+      <li><strong>Longitudinal production studies</strong> not just benchmark snapshots</li>
+      <li><strong>Honesty about limitations</strong> from vendors and researchers alike</li>
+    </ul>
+
+    <p>Until then, the gap between benchmark and reality remains the elephant in every AI coding room.</p>
+  </section>
+
+  <div class="sources">
+    <strong>Benchmark Sources:</strong>
+    <a href="https://www.swebench.com/">SWE-Bench</a> ·
+    <a href="https://scale.com/leaderboard/swe_bench_pro_public">SWE-Bench Pro</a> ·
+    <a href="https://openai.com/index/introducing-swe-bench-verified/">OpenAI SWE-Bench Verified</a> ·
+    <a href="https://www.tbench.ai/">Terminal-Bench</a> ·
+    <a href="https://livecodebench.github.io/">LiveCodeBench</a>
+    <br><br>
+    <strong>Critical Analysis:</strong>
+    <a href="https://runloop.ai/blog/swe-bench-deep-dive-unmasking-the-limitations-of-a-popular-benchmark">Runloop - SWE-Bench Limitations</a> ·
+    <a href="https://www.emergentmind.com/topics/humaneval-coding-benchmark">EmergentMind - HumanEval Review</a> ·
+    <a href="https://huggingface.co/blog/leaderboard-bigcodebench">HuggingFace - BigCodeBench</a> ·
+    <a href="https://fourweekmba.com/the-goodharts-law-trap-when-ai-metrics-become-useless/">FourWeekMBA - Goodhart's Law</a>
+    <br><br>
+    <strong>Research Studies:</strong>
+    <a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/">METR - Developer Productivity Study</a> ·
+    <a href="https://arxiv.org/html/2509.19708v1">Enterprise AI Deployment Study</a> ·
+    <a href="https://arxiv.org/html/2509.16941v1">SWE-Bench Pro Paper</a> ·
+    <a href="https://www.greptile.com/state-of-ai-coding-2025">State of AI Coding 2025</a>
+  </div>
+
+  <footer>
+    <p><strong>Deep dive from:</strong> <a href="coding-agents.html">The Coding Agent Wars</a></p>
+    <p><strong>Part of:</strong> <a href="index.html">Mansion Research</a></p>
+    <p>Generated by <a href="https://github.com/minormobius/Mansion">Mansion Agent Swarm</a></p>
+  </footer>
+</body>
+</html>
