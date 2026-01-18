@@ -205,9 +205,10 @@
     <a href="#goodhart">1. Goodhart's Law Comes for AI</a>
     <a href="#benchmarks">2. The Major Benchmarks (And Their Flaws)</a>
     <a href="#contamination">3. The Contamination Crisis</a>
-    <a href="#gap">4. The Benchmark-Reality Gap</a>
-    <a href="#metr">5. The METR Bombshell</a>
-    <a href="#implications">6. What This Actually Means</a>
+    <a href="#moving-target">4. The Moving Target Problem</a>
+    <a href="#gap">5. The Benchmark-Reality Gap</a>
+    <a href="#metr">6. The METR Bombshell</a>
+    <a href="#implications">7. What This Actually Means</a>
   </div>
 
   <section id="goodhart">
@@ -230,9 +231,9 @@
     <div class="benchmark-card">
       <h4>
         <span><a href="https://www.swebench.com/">SWE-Bench</a></span>
-        <span class="score">Top: ~70% Verified</span>
+        <span class="score">Top: 80.9% Verified</span>
       </h4>
-      <div class="meta">Princeton, 2023 | Real GitHub issues from popular Python repos</div>
+      <div class="meta">Princeton, 2023 | Real GitHub issues from popular Python repos | <a href="https://www.anthropic.com/news/claude-opus-4-5">Current leader: Claude Opus 4.5</a></div>
       <p>The current industry standard. Models receive a GitHub issue description and must produce a patch that passes the repo's test suite. Widely cited by Anthropic, OpenAI, and others.</p>
       <div class="problems">
         <strong>Known Problems:</strong>
@@ -359,6 +360,71 @@
     </ol>
 
     <p>Efforts like <a href="https://livecodebench.github.io/">LiveCodeBench</a> use time-split datasets with problems created after model training cutoffs. But even this is a rearguard action—contamination finds a way.</p>
+  </section>
+
+  <section id="moving-target">
+    <h2>The Moving Target Problem</h2>
+
+    <p>There's a meta-problem with AI coding benchmarks that compounds all others: <strong>the field moves faster than evaluation can follow</strong>.</p>
+
+    <p>Consider the trajectory in just the past two months:</p>
+
+    <table class="comparison-table">
+      <tr>
+        <th>Model</th>
+        <th>SWE-bench Verified</th>
+        <th>Terminal-Bench</th>
+        <th>Release</th>
+      </tr>
+      <tr>
+        <td><a href="https://www.anthropic.com/engineering/claude-code-best-practices">Claude Sonnet 4.5</a></td>
+        <td>77.2%</td>
+        <td>~45%</td>
+        <td>Oct 2025</td>
+      </tr>
+      <tr>
+        <td><a href="https://openai.com/index/introducing-gpt-5-2-codex/">GPT-5.2 Codex</a></td>
+        <td>80.0%</td>
+        <td>~47.6%</td>
+        <td>Nov 2025</td>
+      </tr>
+      <tr>
+        <td><a href="https://www.anthropic.com/news/claude-opus-4-5">Claude Opus 4.5</a></td>
+        <td><strong>80.9%</strong></td>
+        <td><strong>59.3%</strong></td>
+        <td>Nov 2025</td>
+      </tr>
+    </table>
+
+    <p><a href="https://www.theunwindai.com/p/claude-opus-4-5-scores-80-9-on-swe-bench">Claude Opus 4.5 became the first AI model to break the 80% barrier</a> on SWE-bench Verified—solving 405 of 500 real-world coding problems. Within weeks, benchmarks that seemed state-of-the-art become historical artifacts.</p>
+
+    <div class="stat-highlight">
+      <div class="number">80.9%</div>
+      <div class="label">Claude Opus 4.5 on SWE-bench Verified (first model to break 80%)</div>
+      <div class="source">— <a href="https://www.vellum.ai/blog/claude-opus-4-5-benchmarks">Vellum Benchmarks Analysis, January 2026</a></div>
+    </div>
+
+    <h3>The Evaluation Lag</h3>
+
+    <p>By the time a benchmark is designed, validated, published, and adopted—the models have moved on. The SWE-bench Pro creators explicitly note their benchmark was created because <a href="https://scale.com/leaderboard/swe_bench_pro_public">original SWE-bench became "too easy"</a>. But "too easy" is a moving target when capabilities improve faster than evaluation methodology.</p>
+
+    <p><a href="https://www.datacamp.com/blog/claude-opus-4-5">Opus 4.5's efficiency gains</a> illustrate the compounding problem: at medium effort, it matches Sonnet 4.5's best SWE-bench score using <strong>76% fewer tokens</strong>. At maximum effort, it exceeds Sonnet by 4.3 percentage points using <strong>48% fewer tokens</strong>. Benchmarks designed for one generation don't capture capability-per-compute improvements in the next.</p>
+
+    <h3>The Self-Obsoleting Article</h3>
+
+    <p>Here's the uncomfortable truth: <em>this article is already partially outdated</em>. The 77.2% figure cited for Claude in the parent article was state-of-the-art when written. By publication, Opus 4.5 had pushed to 80.9%. By the time you read this, the numbers may have moved again.</p>
+
+    <p><a href="https://lmcouncil.ai/benchmarks">LM Council's January 2026 leaderboards</a> show the current state—but "current" in AI benchmarking has a half-life measured in weeks, not months.</p>
+
+    <p>This creates a fundamental epistemological problem: <strong>we cannot reliably compare models because the comparison framework is always behind the models being compared</strong>. Every benchmark score is a snapshot of a moment that has already passed.</p>
+
+    <h3>The Enterprise Paradox</h3>
+
+    <p>Enterprises make purchasing decisions on quarterly cycles. AI models improve on weekly cycles. By the time a company evaluates, pilots, and deploys a coding AI based on benchmark comparisons, the competitive landscape has reshuffled.</p>
+
+    <p><a href="https://blog.logrocket.com/ai-dev-tool-power-rankings/">LogRocket's January 2026 dev tool rankings</a> explicitly note this problem: rankings that were accurate at time of research may be obsolete by time of publication. The "best" tool when you start evaluating may not be the best when you finish.</p>
+
+    <blockquote class="warning">"The benchmark you're optimizing for today will be irrelevant tomorrow. But you won't know which benchmark matters tomorrow until tomorrow arrives." — <a href="https://artificialanalysis.ai/articles/claude-opus-4-5-benchmarks-and-analysis">Artificial Analysis</a></blockquote>
   </section>
 
   <section id="gap">
@@ -507,7 +573,16 @@
     <a href="https://scale.com/leaderboard/swe_bench_pro_public">SWE-Bench Pro</a> ·
     <a href="https://openai.com/index/introducing-swe-bench-verified/">OpenAI SWE-Bench Verified</a> ·
     <a href="https://www.tbench.ai/">Terminal-Bench</a> ·
-    <a href="https://livecodebench.github.io/">LiveCodeBench</a>
+    <a href="https://livecodebench.github.io/">LiveCodeBench</a> ·
+    <a href="https://lmcouncil.ai/benchmarks">LM Council Jan 2026</a>
+    <br><br>
+    <strong>Model Benchmarks (Jan 2026):</strong>
+    <a href="https://www.anthropic.com/news/claude-opus-4-5">Claude Opus 4.5 Release</a> ·
+    <a href="https://www.vellum.ai/blog/claude-opus-4-5-benchmarks">Vellum - Opus 4.5 Benchmarks</a> ·
+    <a href="https://www.theunwindai.com/p/claude-opus-4-5-scores-80-9-on-swe-bench">UnwindAI - 80.9% Analysis</a> ·
+    <a href="https://www.datacamp.com/blog/claude-opus-4-5">DataCamp - Opus 4.5 Analysis</a> ·
+    <a href="https://artificialanalysis.ai/articles/claude-opus-4-5-benchmarks-and-analysis">Artificial Analysis</a> ·
+    <a href="https://blog.logrocket.com/ai-dev-tool-power-rankings/">LogRocket Power Rankings</a>
     <br><br>
     <strong>Critical Analysis:</strong>
     <a href="https://runloop.ai/blog/swe-bench-deep-dive-unmasking-the-limitations-of-a-popular-benchmark">Runloop - SWE-Bench Limitations</a> ·
