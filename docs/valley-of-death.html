@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="mansion:last-updated" content="2026-01-18">
+  <meta name="mansion:portfolio" content="biotech">
+  <meta name="mansion:staleness-risk" content="high">
+  <title>The Valley of Death | Mansion Research</title>
+  <style>
+    :root {
+      --bg: #fafafa;
+      --text: #1a1a2e;
+      --accent: #059669;
+      --muted: #666;
+      --card-bg: #fff;
+      --border: #e0e0e0;
+      --warning: #dc2626;
+      --success: #059669;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1a1a2e;
+        --text: #eee;
+        --accent: #34d399;
+        --muted: #aaa;
+        --card-bg: #252542;
+        --border: #3a3a5e;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      line-height: 1.8;
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: var(--bg);
+      color: var(--text);
+    }
+    h1 { font-size: 2.5rem; margin-bottom: 0.5rem; letter-spacing: -0.02em; }
+    h2 { font-size: 1.75rem; margin-top: 2.5rem; border-bottom: 2px solid var(--border); padding-bottom: 0.5rem; }
+    h3 { font-size: 1.25rem; margin-top: 2rem; color: var(--accent); }
+    .subtitle { color: var(--muted); font-size: 1.1rem; margin-bottom: 2rem; font-style: italic; }
+    .dateline { color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; }
+
+    blockquote {
+      border-left: 4px solid var(--accent);
+      margin: 2rem 0;
+      padding: 1rem 1.5rem;
+      background: var(--card-bg);
+      font-style: italic;
+    }
+    blockquote.warning {
+      border-left-color: var(--warning);
+    }
+
+    a { color: var(--accent); }
+    p { margin: 1.25rem 0; }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    .stat-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 1.25rem;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .stat-box .number {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    .stat-box .number.down { color: var(--warning); }
+    .stat-box .number.up { color: var(--success); }
+    .stat-box .label {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+    }
+
+    .timeline {
+      border-left: 3px solid var(--border);
+      padding-left: 2rem;
+      margin: 2rem 0;
+    }
+    .timeline-event {
+      position: relative;
+      margin-bottom: 1.5rem;
+    }
+    .timeline-event::before {
+      content: '';
+      position: absolute;
+      left: -2.35rem;
+      top: 0.5rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--border);
+    }
+    .timeline-event.negative::before { background: var(--warning); }
+    .timeline-event.positive::before { background: var(--success); }
+    .timeline-date { font-weight: bold; color: var(--accent); }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+    }
+    .comparison-table th, .comparison-table td {
+      padding: 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .comparison-table th {
+      background: var(--card-bg);
+      font-weight: 600;
+    }
+
+    .bridge-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--success);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .bridge-card h4 {
+      margin: 0 0 0.5rem 0;
+      color: var(--success);
+    }
+    .bridge-card .result {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 0.75rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .casualty-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--warning);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .casualty-card h4 {
+      margin: 0 0 0.5rem 0;
+      color: var(--warning);
+    }
+
+    .toc {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+    .toc h3 {
+      margin: 0 0 1rem 0;
+      font-size: 1rem;
+      color: var(--text);
+    }
+    .toc a {
+      display: block;
+      margin: 0.5rem 0;
+      font-size: 0.95rem;
+    }
+
+    .verdict {
+      background: linear-gradient(135deg, var(--card-bg) 0%, rgba(220, 38, 38, 0.05) 100%);
+      border: 2px solid var(--warning);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      text-align: center;
+    }
+    .verdict .headline {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--warning);
+      margin-bottom: 0.5rem;
+    }
+
+    .sources {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    details.changelog {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    details.changelog summary {
+      cursor: pointer;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <p><a href="index.html">&larr; Mansion Research</a> · <a href="biotech-funding.html">Biotech Funding</a></p>
+    <h1>The Valley of Death</h1>
+    <p class="subtitle">Biotech's funding gap is widening at the bottom, narrowing at the top</p>
+    <p class="dateline">January 2026 | Deep dive from <a href="biotech-funding.html">Biotech Funding Mechanisms</a></p>
+  </header>
+
+  <div class="verdict">
+    <div class="headline">Verdict: The Valley is Polarizing</div>
+    <p>Early-stage funding at historic lows. Late-stage capital abundant. If you survive to Series D, you'll be fine. Getting there is the problem.</p>
+  </div>
+
+  <div class="stat-grid">
+    <div class="stat-box">
+      <div class="number down">8%</div>
+      <div class="label">Biotech share of US VC (lowest ever)</div>
+    </div>
+    <div class="stat-box">
+      <div class="number down">14%</div>
+      <div class="label">Seed deals as % of total (record low)</div>
+    </div>
+    <div class="stat-box">
+      <div class="number down">37%</div>
+      <div class="label">Proposed NCI budget cut</div>
+    </div>
+    <div class="stat-box">
+      <div class="number up">60x</div>
+      <div class="label">Series D growth Q2→Q3</div>
+    </div>
+  </div>
+
+  <div class="toc">
+    <h3>Contents</h3>
+    <a href="#what">1. What Is the Valley of Death?</a>
+    <a href="#widening">2. Evidence It's Widening</a>
+    <a href="#narrowing">3. Evidence It's Narrowing</a>
+    <a href="#bridges">4. Bridges Being Built</a>
+    <a href="#casualties">5. The Casualties</a>
+    <a href="#synthesis">6. Synthesis: The Polarization</a>
+  </div>
+
+  <section id="what">
+    <h2>What Is the Valley of Death?</h2>
+
+    <p>The valley of death is the gap between academic discovery and commercial viability—the period when a promising therapeutic has demonstrated proof-of-concept but isn't yet attractive to pharmaceutical companies or venture capital.</p>
+
+    <p><a href="https://www.nature.com/articles/s44222-023-00146-1">As Nature Reviews Bioengineering describes it</a>: "The valley represents the gap between when a scientist makes a discovery and when that work has reached the point when a pharmaceutical company will license it, or a venture capital firm will invest in it."</p>
+
+    <p>The economics are brutal:</p>
+
+    <table class="comparison-table">
+      <tr>
+        <th>Stage</th>
+        <th>Typical Need</th>
+        <th>Who Funds</th>
+        <th>Current Status</th>
+      </tr>
+      <tr>
+        <td>Basic Research</td>
+        <td>$100K-$1M</td>
+        <td>NIH, NSF, foundations</td>
+        <td>Under severe pressure</td>
+      </tr>
+      <tr>
+        <td><strong>Valley of Death</strong></td>
+        <td>$1M-$20M</td>
+        <td>???</td>
+        <td><strong>Crisis zone</strong></td>
+      </tr>
+      <tr>
+        <td>Phase I/II</td>
+        <td>$20M-$100M</td>
+        <td>Seed/Series A VC</td>
+        <td>Constrained</td>
+      </tr>
+      <tr>
+        <td>Phase III</td>
+        <td>$100M-$500M+</td>
+        <td>Series B/C/D, pharma</td>
+        <td>Relatively healthy</td>
+      </tr>
+    </table>
+
+    <p>The question for 2026: is this gap getting better or worse?</p>
+  </section>
+
+  <section id="widening">
+    <h2>Evidence It's Widening</h2>
+
+    <h3>The Federal Funding Collapse</h3>
+
+    <p>The <a href="https://candid.org/blogs/what-federal-cuts-funding-gaps-mean-for-cancer-research-biomedical-innovation/">National Cancer Institute lost over $300 million</a> and hundreds of staff members from January to March 2025. Worse is coming: the proposed FY2026 budget would cut NCI by <strong>$2.7 billion—a 37.2% reduction</strong>.</p>
+
+    <p>The ripple effects are immediate. <a href="https://www.ebhoward.com/nih-hits-pause-on-sbir-and-sttr-what-the-latest-guidance-means-for-your-funding-strategy/">NIH's SBIR and STTR programs</a>—which funded approximately 5,000 new awards annually and have channeled over $70 billion into small business R&D—<strong>expired on October 1, 2025</strong>. No new awards are being issued.</p>
+
+    <div class="timeline">
+      <div class="timeline-event negative">
+        <span class="timeline-date">Jan-Mar 2025</span> — NCI loses $300M+ and hundreds of staff
+      </div>
+      <div class="timeline-event negative">
+        <span class="timeline-date">Q2 2025</span> — Biotech VC funding hits $4.8B, <a href="https://www.biopharmadive.com/news/biotech-venture-capital-funding-h1-2025-hsbc/753283/">worst quarterly total in 3 years</a>
+      </div>
+      <div class="timeline-event negative">
+        <span class="timeline-date">Oct 1, 2025</span> — SBIR/STTR programs expire; NIH stops accepting applications
+      </div>
+      <div class="timeline-event negative">
+        <span class="timeline-date">FY2026 Proposal</span> — 37% NIH cut, 50%+ NSF cut proposed
+      </div>
+    </div>
+
+    <h3>The VC Retreat from Early Stage</h3>
+
+    <p><a href="https://news.crunchbase.com/venture/biotech-us-funding-share-lowest-2025/">Crunchbase reports</a> that biotech's share of US startup funding hit just 8% in 2025—"by far the lowest percentage in years" and the lowest in Crunchbase history.</p>
+
+    <p><a href="https://pitchbook.com/news/reports/q3-2025-biopharma-vc-trends">PitchBook's Q3 2025 analysis</a> shows seed-stage deals at a <strong>record low 14%</strong> of total deals. The capital that does flow is concentrating in later stages—fewer companies getting larger checks.</p>
+
+    <blockquote class="warning">"The funding environment for private biotechs is in dire shape. Down 65% in the second quarter, the sector continues to wallow in a valley of death." — <a href="https://www.pharmavoice.com/news/venture-capital-biotech-investment-slowdown-valley-of-death/760304/">PharmaVoice</a></blockquote>
+  </section>
+
+  <section id="narrowing">
+    <h2>Evidence It's Narrowing</h2>
+
+    <h3>The Late-Stage Recovery</h3>
+
+    <p>Q3 2025 saw a <a href="https://www.pharmaceutical-technology.com/analyst-comment/biotech-recovery-q3-2025-venture-funding/">70.9% increase</a> in venture financing deal value over Q2. Series D rounds exploded—up <strong>60-fold</strong> from Q2, reaching $832M.</p>
+
+    <p>The Fed's September 2025 rate cuts helped. But the bigger story is M&A: <a href="https://www.jpmorgan.com/insights/markets-and-economy/outlook/biopharma-medtech-deal-reports">biopharma M&A exceeded 2024</a> with 129 deals totaling approximately <strong>$138 billion</strong>. Big Pharma is buying.</p>
+
+    <div class="timeline">
+      <div class="timeline-event positive">
+        <span class="timeline-date">Q3 2025</span> — Venture funding up 70.9% from Q2 low
+      </div>
+      <div class="timeline-event positive">
+        <span class="timeline-date">Q3 2025</span> — Series D rounds up 60x from Q2
+      </div>
+      <div class="timeline-event positive">
+        <span class="timeline-date">Sep 2025</span> — Fed rate cuts boost investor optimism
+      </div>
+      <div class="timeline-event positive">
+        <span class="timeline-date">2025</span> — M&A hits $138B across 129 deals
+      </div>
+    </div>
+
+    <h3>ARPA-H Filling Gaps</h3>
+
+    <p><a href="https://arpa-h.gov/about/our-research">ARPA-H</a>—launched in 2022 to fund high-risk biomedical moonshots—has launched 23 programs supporting nearly 150 projects. Unlike NIH's incremental approach, ARPA-H takes on projects "industry sees as too risky."</p>
+
+    <p>In October 2025, the <a href="https://www.fiercebiotech.com/biotech/arpa-h-reveals-biotech-winners-vivo-cell-therapy-funding-sweepstakes">EMBODY program announced major awards</a>: ImmunoVec ($40.7M), Kernal Bio consortium ($48M), Tessera Therapeutics ($41.3M). These are exactly the kind of valley-spanning investments the traditional system struggles to make.</p>
+  </section>
+
+  <section id="bridges">
+    <h2>Bridges Being Built</h2>
+
+    <div class="bridge-card">
+      <h4><a href="https://innovation.ucsf.edu/valley-death">UCSF InVent Fund</a></h4>
+      <p>Philanthropic endowment funding university research to "de-risk" projects before seeking external investment. Keeps projects in-house longer for greater returns.</p>
+      <div class="result"><strong>Result:</strong> 18 projects funded, 4 exits over 3 years, including Rezo Therapeutics ($78M Series A)</div>
+    </div>
+
+    <div class="bridge-card">
+      <h4><a href="https://ncinnovation.org/media/how-does-the-valley-of-death-impede-north-carolinas-growth/">NCInnovation</a></h4>
+      <p>North Carolina's $500M state-funded endowment providing non-dilutive grants to university proof-of-concept projects. Backed by $25M+ in private philanthropy.</p>
+      <div class="result"><strong>Result:</strong> $5.2M approved across 7 universities for projects from cancer research to lithium refining</div>
+    </div>
+
+    <div class="bridge-card">
+      <h4><a href="https://www.bioxconomy.com/investment/funding-lifelines-how-to-cross-the-valley-of-death-">Venture Debt</a></h4>
+      <p>Non-dilutive financing gaining traction. IO Biotech signed €57.5M ($66.7M) with European Investment Bank for melanoma vaccine development.</p>
+      <div class="result"><strong>Signal:</strong> Alternative financing models emerging as VC alone can't support deal volume</div>
+    </div>
+
+    <div class="bridge-card">
+      <h4><a href="https://convention.bio.org/program-1/bridging-innovation-valley-death-call-greater-pharma-biotech-academia-collaboration">Pharma-Academia Collaboration</a></h4>
+      <p>BIO 2025 featured extensive discussion of new partnership models. Industry recognizes it needs earlier access to innovation; academia needs funding.</p>
+      <div class="result"><strong>Trend:</strong> "Evolving collaboration models" becoming industry priority</div>
+    </div>
+  </section>
+
+  <section id="casualties">
+    <h2>The Casualties</h2>
+
+    <div class="casualty-card">
+      <h4>Tempest Therapeutics</h4>
+      <p>Promising Phase II results for first-line hepatocellular carcinoma treatment. <a href="https://candid.org/blogs/what-federal-cuts-funding-gaps-mean-for-cancer-research-biomedical-innovation/">Could not secure Phase III funding</a>. Laid off most staff, exploring "strategic alternatives."</p>
+      <p><strong>Patient impact:</strong> HCC patients have delayed or no access to a drug showing "meaningful survival benefits."</p>
+    </div>
+
+    <p><a href="https://candid.org/blogs/what-federal-cuts-funding-gaps-mean-for-cancer-research-biomedical-innovation/">Multiple biotech startups</a> with promising Phase II results shuttered or downsized in 2025 after failing to secure Phase III financing. The valley claims companies with proven efficacy, not just speculative science.</p>
+
+    <blockquote class="warning">"Several biotech startups with promising Phase II results have shuttered or downsized after failing to secure funding for Phase III trials in 2025." — <a href="https://candid.org/blogs/what-federal-cuts-funding-gaps-mean-for-cancer-research-biomedical-innovation/">Candid</a></blockquote>
+  </section>
+
+  <section id="synthesis">
+    <h2>Synthesis: The Polarization</h2>
+
+    <p>The valley of death isn't simply widening or narrowing. It's <strong>polarizing</strong>.</p>
+
+    <table class="comparison-table">
+      <tr>
+        <th>Stage</th>
+        <th>2025 Trend</th>
+        <th>Implication</th>
+      </tr>
+      <tr>
+        <td>Seed / Early Stage</td>
+        <td style="color: var(--warning);">Severely constrained</td>
+        <td>Fewer companies entering the pipeline</td>
+      </tr>
+      <tr>
+        <td>Valley (proof-of-concept to Phase II)</td>
+        <td style="color: var(--warning);">Critical shortage</td>
+        <td>Promising science dies unfunded</td>
+      </tr>
+      <tr>
+        <td>Late Stage (Series C/D)</td>
+        <td style="color: var(--success);">Strong recovery</td>
+        <td>Survivors get well-capitalized</td>
+      </tr>
+      <tr>
+        <td>Exit (M&A)</td>
+        <td style="color: var(--success);">Record activity</td>
+        <td>Big Pharma buying aggressively</td>
+      </tr>
+    </table>
+
+    <p>The capital stack has become bimodal. If you can survive to Series D, there's plenty of money. But the path there has never been harder:</p>
+
+    <ul>
+      <li><strong>Federal cuts</strong> reduce the pipeline of basic discoveries</li>
+      <li><strong>SBIR/STTR freeze</strong> eliminates a key bridge mechanism</li>
+      <li><strong>Seed funding collapse</strong> means fewer companies attempt the crossing</li>
+      <li><strong>VC concentration</strong> means investors prefer late-stage de-risked bets</li>
+    </ul>
+
+    <p>The bridges being built—university endowments, ARPA-H, venture debt, pharma partnerships—are real but small relative to the gap. UCSF's InVent Fund has funded 18 projects in 3 years. The NIH SBIR program funded 5,000 annually before it expired.</p>
+
+    <h3>What This Means</h3>
+
+    <p><strong>For researchers:</strong> The path from bench to bedside is narrower than ever. Alternative mechanisms matter more. ARPA-H applications, university commercialization offices, and philanthropic partnerships are no longer nice-to-haves.</p>
+
+    <p><strong>For patients:</strong> Promising treatments will die in the valley. Tempest's HCC drug is one visible casualty; the invisible ones are discoveries that never got funded to begin with.</p>
+
+    <p><strong>For investors:</strong> The late-stage premium makes sense given the risk profile. But the pipeline feeding late-stage opportunities is constricting. Today's Series D abundance may become tomorrow's deal drought.</p>
+
+    <p><strong>For policy:</strong> SBIR/STTR reauthorization is urgent. The <a href="https://sbtdc.org/blog/sbir-sttr-program-2025-news-and-updates/">House passed a 1-year extension</a>; the Senate hasn't acted. Every month of uncertainty compounds the damage.</p>
+
+    <blockquote>"Capital is a commodity. If you want to make an opportunity successful, you have to provide support." — <a href="https://www.bioxconomy.com/investment/funding-lifelines-how-to-cross-the-valley-of-death-">Blackstone</a></blockquote>
+
+    <p>The valley of death has always been biotech's defining challenge. In 2026, it's not just wide—it's becoming impassable at the bottom while the survivors at the top find abundant capital. The question isn't whether promising science will die unfunded. The question is how much.</p>
+  </section>
+
+  <div class="sources">
+    <strong>Funding Data:</strong>
+    <a href="https://news.crunchbase.com/venture/biotech-us-funding-share-lowest-2025/">Crunchbase - Biotech Share Lowest</a> ·
+    <a href="https://pitchbook.com/news/reports/q3-2025-biopharma-vc-trends">PitchBook Q3 2025</a> ·
+    <a href="https://www.pharmaceutical-technology.com/analyst-comment/biotech-recovery-q3-2025-venture-funding/">Pharma Tech - Q3 Recovery</a> ·
+    <a href="https://www.biopharmadive.com/news/biotech-venture-capital-funding-h1-2025-hsbc/753283/">BioPharma Dive - Q2 Drought</a> ·
+    <a href="https://www.jpmorgan.com/insights/markets-and-economy/outlook/biopharma-medtech-deal-reports">JPMorgan Q4 Report</a>
+    <br><br>
+    <strong>Federal Policy:</strong>
+    <a href="https://candid.org/blogs/what-federal-cuts-funding-gaps-mean-for-cancer-research-biomedical-innovation/">Candid - Federal Cuts</a> ·
+    <a href="https://www.ebhoward.com/nih-hits-pause-on-sbir-and-sttr-what-the-latest-guidance-means-for-your-funding-strategy/">EB Howard - SBIR/STTR Pause</a> ·
+    <a href="https://sbtdc.org/blog/sbir-sttr-program-2025-news-and-updates/">NC SBTDC - SBIR Updates</a> ·
+    <a href="https://arpa-h.gov/about/our-research">ARPA-H Research</a> ·
+    <a href="https://www.fiercebiotech.com/biotech/arpa-h-reveals-biotech-winners-vivo-cell-therapy-funding-sweepstakes">FierceBiotech - ARPA-H Awards</a>
+    <br><br>
+    <strong>Bridge Mechanisms:</strong>
+    <a href="https://innovation.ucsf.edu/valley-death">UCSF InVent Fund</a> ·
+    <a href="https://ncinnovation.org/media/how-does-the-valley-of-death-impede-north-carolinas-growth/">NCInnovation</a> ·
+    <a href="https://www.bioxconomy.com/investment/funding-lifelines-how-to-cross-the-valley-of-death-">BioXconomy - Funding Lifelines</a> ·
+    <a href="https://convention.bio.org/program-1/bridging-innovation-valley-death-call-greater-pharma-biotech-academia-collaboration">BIO 2025 Convention</a>
+    <br><br>
+    <strong>Analysis:</strong>
+    <a href="https://www.nature.com/articles/s44222-023-00146-1">Nature Reviews Bioengineering</a> ·
+    <a href="https://www.pharmavoice.com/news/venture-capital-biotech-investment-slowdown-valley-of-death/760304/">PharmaVoice</a> ·
+    <a href="https://www.statnews.com/2023/08/11/biotech-valley-of-death-university-philanthropic-endowments/">STAT News</a>
+  </div>
+
+  <details class="changelog">
+    <summary>Version History</summary>
+    <ul>
+      <li><strong>Jan 18, 2026:</strong> Initial publication via digestion loop</li>
+    </ul>
+  </details>
+
+  <footer>
+    <p><strong>Deep dive from:</strong> <a href="biotech-funding.html">Biotech Funding Mechanisms</a></p>
+    <p><strong>Part of:</strong> <a href="index.html">Mansion Research</a></p>
+    <p>Generated by <a href="https://github.com/minormobius/Mansion">Mansion Agent Swarm</a></p>
+    <p><em>See also:</em> <a href="upenn-gene-therapy.html">UPenn Gene Therapy</a> | <a href="carl-june.html">Carl June</a></p>
+  </footer>
+</body>
+</html>

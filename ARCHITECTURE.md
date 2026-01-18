@@ -52,23 +52,31 @@ UPDATER AGENTS                                       │
 - `biotech-funding.html` - 30 discoveries, funding mechanisms
 - `upenn-gene-therapy.html` - Penn's gene therapy empire
 - `carl-june.html` - CAR-T pioneer biography
+- `valley-of-death.html` - Funding gap analysis (NEW Jan 18)
 
 **Open Questions:**
 - What's the current state of CAR-T pricing post-Novartis renegotiation?
 - Have any of the 20 FDA 510(k) devices we listed had adverse event reports?
-- Is the "valley of death" funding gap narrowing or widening?
+- ~~Is the "valley of death" funding gap narrowing or widening?~~ → **ANSWERED**: [Polarizing - widening at early stage, narrowing at late stage](docs/valley-of-death.html)
 - What happened to the Gelsinger family's advocacy work?
 - Are there new CRISPR therapeutics approaching approval?
+- **NEW**: When will SBIR/STTR be reauthorized? (House passed 1-year extension, Senate stalled)
+- **NEW**: What happened to Tempest Therapeutics? Any strategic alternatives found?
+- **NEW**: Are other universities following UCSF InVent Fund model?
 
 **Extension Opportunities:**
 - Jennifer Doudna / CRISPR deep dive (natural pair with June)
 - Moderna's pivot post-COVID
-- The biotech VC shakeout of 2025
+- The biotech VC shakeout of 2025 → partially covered in valley-of-death.html
 - FDA AI/ML device guidance evolution
+- **NEW**: ARPA-H deep dive - the anti-valley-of-death agency
+- **NEW**: University tech transfer offices comparative analysis
 
 **Stale Risk:**
 - FDA 510(k) list will age quickly
 - Funding round data from late 2025
+- **NEW**: Valley of death stats (Q3 2025 data, will need Q4 update)
+- **NEW**: SBIR/STTR status (changes weekly)
 
 **Source Scouts Should Monitor:**
 - FDA 510(k) database weekly
@@ -76,6 +84,9 @@ UPDATER AGENTS                                       │
 - STAT News, Endpoints News RSS
 - bioRxiv gene therapy preprints
 - ClinicalTrials.gov CAR-T registrations
+- **NEW**: Congress.gov for SBIR/STTR reauthorization
+- **NEW**: PitchBook/Crunchbase for VC funding quarterly reports
+- **NEW**: ARPA-H announcements
 
 ---
 
