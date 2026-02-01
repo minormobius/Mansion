@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="mansion:last-updated" content="2026-01-18">
+  <meta name="mansion:portfolio" content="biotech">
+  <meta name="mansion:staleness-risk" content="medium">
+  <title>Mansion Research | Biotech Funding: Academic Headwaters</title>
+  <style>
+    :root {
+      --bg: #fafafa;
+      --text: #1a1a2e;
+      --accent: #4361ee;
+      --muted: #666;
+      --card-bg: #fff;
+      --border: #e0e0e0;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1a1a2e;
+        --text: #eee;
+        --accent: #7b8cff;
+        --muted: #aaa;
+        --card-bg: #252542;
+        --border: #3a3a5e;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.7;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: var(--bg);
+      color: var(--text);
+    }
+    h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+    h2 { font-size: 1.5rem; color: var(--accent); margin-top: 2rem; }
+    .subtitle { color: var(--muted); font-size: 1.1rem; margin-bottom: 2rem; }
+    .stats {
+      display: flex;
+      gap: 2rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+    .stat {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+    }
+    .stat-number { font-size: 2rem; font-weight: bold; color: var(--accent); }
+    .stat-label { font-size: 0.9rem; color: var(--muted); }
+    .discovery {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 1rem 0;
+    }
+    .discovery-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.5rem;
+    }
+    .discovery h3 { margin: 0; font-size: 1.1rem; }
+    .badge {
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .badge-breakthrough { background: #ffd700; color: #1a1a2e; }
+    .badge-major { background: #4361ee; color: white; }
+    .badge-notable { background: #38b000; color: white; }
+    .badge-minor { background: var(--border); color: var(--text); }
+    .discovery p { margin: 0.5rem 0; color: var(--text); }
+    .sources {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.75rem;
+    }
+    .post-text {
+      background: var(--bg);
+      border-left: 3px solid var(--accent);
+      padding: 0.75rem 1rem;
+      margin-top: 1rem;
+      font-style: italic;
+      font-size: 0.95rem;
+    }
+    a { color: var(--accent); }
+    footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .toc { margin: 2rem 0; }
+    .toc a {
+      display: inline-block;
+      margin: 0.25rem 0.5rem 0.25rem 0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <p><a href="index.html">&larr; Back to Mansion Research</a></p>
+    <h1>Biotech Funding: Academic Headwaters</h1>
+    <p class="subtitle">Tracing the university origins of the biotech industry</p>
+  </header>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-number">30</div>
+      <div class="stat-label">Discoveries</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">6</div>
+      <div class="stat-label">Breakthroughs</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">$200B+</div>
+      <div class="stat-label">Market Cap Traced</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">20</div>
+      <div class="stat-label">510(k) Clearances</div>
+    </div>
+  </div>
+
+  <section>
+    <h2>The Research</h2>
+    <p>
+      Where do billion-dollar biotech companies come from? This research traces the academic headwaters
+      of the biotech industry—the university labs, NIH grants, tech transfer offices, and professor-founders
+      that seed commercial biotechnology. From Moderna's MIT/Harvard origins to UPenn's gene therapy empire,
+      the path from basic science to IPO runs through academia.
+    </p>
+  </section>
+
+  <section>
+    <h2>Key Themes</h2>
+    <div class="toc">
+      <a href="#spinouts">University Spinouts</a>
+      <a href="#funding">NIH/Government Funding</a>
+      <a href="#vc">VC Academic Strategies</a>
+      <a href="#people">Key People & Labs</a>
+      <a href="#models">Business Models</a>
+      <a href="#trends">Current Trends</a>
+      <a href="#fda510k">FDA 510(k) Clearances</a>
+    </div>
+  </section>
+
+  <section id="breakthroughs">
+    <h2>Breakthroughs</h2>
+
+    <div class="discovery">
+      <div class="discovery-header">
+        <h3>Moderna's MIT Origins</h3>
+        <span class="badge badge-breakthrough">Breakthrough</span>
+      </div>
+      <p>Moderna was <a href="https://www.sec.gov/Archives/edgar/data/1682852/000119312518323562/d577473ds1.htm">founded in 2010</a> based on mRNA research from <a href="https://hsci.harvard.edu/people/derrick-rossi-phd">Derrick Rossi's lab at Harvard</a>. The foundational IP built on <a href="https://doi.org/10.1016/j.cell.2005.08.012">nucleoside modification discoveries</a> by Karikó and Weissman. From academic research to a <a href="https://www.google.com/finance/quote/MRNA:NASDAQ">$100B+ market cap</a> during COVID.</p>
+      <div class="sources">Sources: <a href="https://www.sec.gov/Archives/edgar/data/1682852/000119312518323562/d577473ds1.htm">Moderna S-1 Filing</a> · <a href="https://hsci.harvard.edu/people/derrick-rossi-phd">Harvard Stem Cell Institute</a> · <a href="https://doi.org/10.1016/j.cell.2005.08.012">Karikó & Weissman 2005</a></div>
+      <div class="post-text">"Moderna's origin story is wild - Derrick Rossi's Harvard lab work on modified mRNA, licensed through MIT's tech transfer office, NIH-funded research. Academic science to $100B+ market cap. The university-to-pharma pipeline at its most consequential."</div>
+    </div>
+
+    <div class="discovery">
+      <div class="discovery-header">
+        <h3>CRISPR Therapeutics and UC Berkeley</h3>
+        <span class="badge badge-breakthrough">Breakthrough</span>
+      </div>
+      <p><a href="https://vcresearch.berkeley.edu/faculty/jennifer-doudna">Jennifer Doudna's</a> CRISPR-Cas9 work at UC Berkeley, published in the landmark <a href="https://doi.org/10.1126/science.1225829">2012 Science paper</a> and funded by <a href="https://www.hhmi.org/scientists/jennifer-doudna">HHMI</a>, spawned multiple companies. The <a href="https://www.nature.com/articles/d41586-022-00629-y">Broad vs UC Berkeley patent battle</a> highlighted billions in commercial value. Doudna co-founded <a href="https://www.cariboubio.com/">Caribou</a> and <a href="https://www.mammothbio.com/">Mammoth Biosciences</a>.</p>
+      <div class="sources">Sources: <a href="https://doi.org/10.1126/science.1225829">Jinek et al. 2012 (Science)</a> · <a href="https://www.hhmi.org/scientists/jennifer-doudna">HHMI - Doudna</a> · <a href="https://www.nature.com/articles/d41586-022-00629-y">Nature - Patent Battle</a></div>
+      <div class="post-text">"The CRISPR patent wars between UC Berkeley and Broad Institute weren't just legal drama - they revealed billions in commercial value sitting in academic labs. Doudna's NIH/HHMI-funded work spawned Caribou, Mammoth, Intellia. Basic science grants becoming billion-dollar platforms."</div>
+    </div>
+
+    <div class="discovery" style="border-left: 4px solid #ffd700;">
+      <div class="discovery-header">
+        <h3><a href="langer-biography.html">The Langer Lab Factory</a> 📖</h3>
+        <span class="badge badge-breakthrough">Breakthrough</span>
+      </div>
+      <p>Robert Langer's <a href="https://langerlab.mit.edu/">MIT lab</a> has spawned <a href="https://news.mit.edu/2015/robert-langer-queen-elizabeth-prize-0203">40+ companies</a> and trained <a href="https://www.achievement.org/achiever/robert-langer/">400+ PhD students</a> who've started their own ventures. Companies include <a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001682852">Moderna</a>, <a href="https://www.crunchbase.com/organization/momenta-pharmaceuticals">Momenta Pharmaceuticals</a>, and <a href="https://www.livingproof.com/about-us">Living Proof</a>. His drug delivery research, funded by decades of <a href="https://reporter.nih.gov/search/yJQtLQKjhEKpWp_7DJPNvA/projects?shared=true">NIH grants</a>, became an empire.</p>
+      <p><strong><a href="langer-biography.html">→ Deep Dive: Full Langer Biography</a></strong> — A dialectical analysis using thesis-antithesis-synthesis methodology</p>
+      <div class="sources">Sources: <a href="https://langerlab.mit.edu/">Langer Lab MIT</a> · <a href="https://news.mit.edu/2015/robert-langer-queen-elizabeth-prize-0203">MIT News</a> · <a href="https://www.achievement.org/achiever/robert-langer/">Academy of Achievement</a> · <a href="https://reporter.nih.gov/search/yJQtLQKjhEKpWp_7DJPNvA/projects?shared=true">NIH Reporter</a></div>
+      <div class="post-text">"Bob Langer's MIT lab is basically a biotech startup factory. 40+ companies including Moderna. 400+ PhD students who've started their own ventures. Decades of NIH grants funding drug delivery research that became an entire industry vertical."</div>
+    </div>
+
+    <div class="discovery" style="border-left: 4px solid #ffd700;">
+      <div class="discovery-header">
+        <h3><a href="carl-june.html">CAR-T's Academic Journey</a> 📖</h3>
+        <span class="badge badge-breakthrough">Breakthrough</span>
+      </div>
+      <p>CAR-T therapy originated from <a href="carl-june.html">Carl June's lab at UPenn</a>, funded by NIH and the <a href="https://www.lls.org/">Leukemia & Lymphoma Society</a>. Novartis <a href="https://www.novartis.com/news/media-releases/novartis-and-university-pennsylvania-announce-exclusive-global-license-agreement-novel-cancer-immunotherapy">licensed the technology in 2012</a>, leading to <a href="https://www.fda.gov/news-events/press-announcements/fda-approval-brings-first-gene-therapy-united-states">FDA approval of Kymriah in 2017</a>—the first CAR-T therapy.</p>
+      <p><strong><a href="carl-june.html">→ Deep Dive: Carl June</a></strong> — Five perspectives on the physician-scientist who turned personal tragedy into CAR-T</p>
+      <div class="sources">Sources: <a href="https://www.med.upenn.edu/apps/faculty/index.php/g275/p8574254">Penn Medicine - Carl June</a> · <a href="https://www.novartis.com/news/media-releases/novartis-and-university-pennsylvania-announce-exclusive-global-license-agreement-novel-cancer-immunotherapy">Novartis Press Release</a> · <a href="https://www.fda.gov/news-events/press-announcements/fda-approval-brings-first-gene-therapy-united-states">FDA Approval</a></div>
+      <div class="post-text">"CAR-T's path: Carl June's UPenn lab, NIH + Leukemia Society grants, Novartis license in 2012 for $20M upfront. Now Kymriah costs $475K per treatment. Academic immunology becoming cancer medicine's future."</div>
+    </div>
+
+    <div class="discovery">
+      <div class="discovery-header">
+        <h3>BioNTech and University of Mainz</h3>
+        <span class="badge badge-breakthrough">Breakthrough</span>
+      </div>
+      <p>BioNTech was <a href="https://investors.biontech.de/static-files/bad8db18-c0c6-4d4a-8e84-89b5dce0a3a9">founded by</a> husband-wife team <a href="https://www.unimedizin-mainz.de/tron/tron/team/prof-dr-med-ugur-sahin.html">Uğur Şahin</a> and Özlem Türeci from University of Mainz. Their mRNA cancer vaccine research, funded by the <a href="https://www.bmbf.de/bmbf/en/home/home_node.html">German Federal Ministry of Education</a>, pivoted to COVID in January 2020. Academic oncology expertise saving millions.</p>
+      <div class="sources">Sources: <a href="https://investors.biontech.de/static-files/bad8db18-c0c6-4d4a-8e84-89b5dce0a3a9">BioNTech IPO Prospectus</a> · <a href="https://www.unimedizin-mainz.de/tron/tron/team/prof-dr-med-ugur-sahin.html">University of Mainz</a> · <a href="https://www.bmbf.de/bmbf/en/home/home_node.html">BMBF</a></div>
+      <div class="post-text">"BioNTech's founders Sahin and Tureci were University of Mainz cancer researchers. German government grants funded their mRNA work. They pivoted to COVID in a weekend. Academic oncology saving millions. Not Silicon Valley - Mainz, Germany."</div>
+    </div>
+
+    <div class="discovery" style="border-left: 4px solid #ffd700;">
+      <div class="discovery-header">
+        <h3><a href="upenn-gene-therapy.html">UPenn Gene Therapy Empire</a> 📖</h3>
+        <span class="badge badge-breakthrough">Breakthrough</span>
+      </div>
+      <p>UPenn has become the dominant gene therapy university. <a href="https://gtp.med.upenn.edu/about/james-m-wilson-md-phd">Jim Wilson's lab</a> (AAV vectors), <a href="https://www.med.upenn.edu/apps/faculty/index.php/g275/p8574254">Carl June</a> (CAR-T), and <a href="https://www.med.upenn.edu/apps/faculty/index.php/g275/p8122973">Jean Bennett</a> (Luxturna) all there. <a href="https://sparktx.com/">Spark Therapeutics</a>, <a href="https://www.roche.com/media/releases/med-cor-2019-02-25">sold to Roche for $4.3B</a>, came from UPenn's <a href="https://www.med.upenn.edu/gtp/">Gene Therapy Program</a>.</p>
+      <p><strong><a href="upenn-gene-therapy.html">→ Deep Dive: The UPenn Gene Therapy Empire</a></strong> — From the <a href="https://www.nytimes.com/1999/11/28/us/the-biotech-death-of-jesse-gelsinger.html">Jesse Gelsinger tragedy</a> to Luxturna and CAR-T: a dialectical analysis</p>
+      <div class="sources">Sources: <a href="https://gtp.med.upenn.edu/">Penn Gene Therapy Program</a> · <a href="https://www.roche.com/media/releases/med-cor-2019-02-25">Roche-Spark Acquisition</a> · <a href="https://sparktx.com/">Spark Therapeutics</a></div>
+      <div class="post-text">"UPenn built a gene therapy empire. Jim Wilson (AAV), Carl June (CAR-T), Jean Bennett (Luxturna, first FDA-approved gene therapy). Spark sold to Roche for $4.3B. One university dominating an entire therapeutic modality."</div>
+    </div>
+  </section>
+
+  <section id="spinouts">
+    <h2>Major Findings: University Spinouts & Tech Transfer</h2>
+
+    <div class="discovery">
+      <div class="discovery-header">
+        <h3>Stanford's OTL Dominance</h3>
+        <span class="badge badge-major">Major</span>
+      </div>
+      <p><a href="https://otl.stanford.edu/">Stanford's Office of Technology Licensing</a> has generated over <a href="https://otl.stanford.edu/about/about-us/otl-annual-reports">$2B in cumulative revenue</a>. Key biotech spinouts include the <a href="https://www.gene.com/gene/about/history">Genentech founding</a> (1976, UCSF/Stanford collaboration) and <a href="https://guardanthealth.com/">Guardant Health</a>. Stanford <a href="https://otl.stanford.edu/about/about-us/history">pioneered the modern tech transfer model</a> in 1970 under Niels Reimers.</p>
+      <div class="sources">Sources: <a href="https://otl.stanford.edu/">Stanford OTL</a> · <a href="https://otl.stanford.edu/about/about-us/otl-annual-reports">OTL Annual Reports</a> · <a href="https://www.gene.com/gene/about/history">Genentech History</a></div>
+    </div>
+
+    <div class="discovery">
+      <div class="discovery-header">
+        <h3>Flagship Pioneering's Academic Model</h3>
+        <span class="badge badge-major">Major</span>
+      </div>
+      <p><a href="https://www.flagshippioneering.com/">Flagship Pioneering</a>, which created Moderna, has a unique model: they don't wait for academics to start companies. Founded by <a href="https://www.flagshippioneering.com/people/noubar-afeyan">Noubar Afeyan</a>, they identify promising academic research, create companies around it, and install professional management. Founded <a href="https://www.flagshippioneering.com/companies">40+ companies</a> with $30B+ in aggregate value.</p>
+      <div class="sources">Sources: <a href="https://www.flagshippioneering.com/">Flagship Pioneering</a> · <a href="https://www.flagshippioneering.com/people/noubar-afeyan">Noubar Afeyan Bio</a> · <a href="https://www.flagshippioneering.com/companies">Flagship Companies</a></div>
+    </div>
+
+    <div class="discovery">
+      <div class="discovery-header">
+        <h3>The Broad Institute's Hybrid Model</h3>
+        <span class="badge badge-major">Major</span>
+      </div>
+      <p>Broad Institute (Harvard/MIT) operates as nonprofit but spawns numerous companies. The academic-commercial membrane is deliberately permeable, producing Editas Medicine and Celsius Therapeutics.</p>
+      <div class="sources">Sources: Broad Institute annual reports, Editas Medicine S-1</div>
+    </div>
+
+    <div class="discovery">
+      <div class="discovery-header">
+        <h3>Fred Hutch Cancer Research Center</h3>
+        <span class="badge badge-major">Major</span>
+      </div>
+      <p>Fred Hutchinson in Seattle became a CAR-T and immunotherapy hub. Juno Therapeutics (acquired by Celgene for $9B) came from Fred Hutch. NIH Cancer Center funding plus local VC creates powerful ecosystem.</p>
+      <div class="sources">Sources: Fred Hutch tech transfer, Juno Therapeutics history</div>
+    </div>
+  </section>
+
+  <section id="funding">
+    <h2>Major Findings: Government Funding Pipeline</h2>
+
+    <div class="discovery">
+      <div class="discovery-header">
+        <h3>SBIR/STTR as Biotech Launchpad</h3>
+        <span class="badge badge-major">Major</span>
+      </div>
+      <p>NIH's <a href="https://seed.nih.gov/">SBIR/STTR program</a> has funded early stages of companies including Genzyme, Amgen, and Geron. <a href="https://www.sbir.gov/about">Phase I grants ($275K)</a> and Phase II ($1M+) provide non-dilutive funding that academic founders use to de-risk before VC rounds. The <a href="https://www.sbir.gov/awards/annual-reports">program database</a> shows thousands of biotech awards.</p>
+      <div class="sources">Sources: <a href="https://seed.nih.gov/">NIH SEED (SBIR/STTR)</a> · <a href="https://www.sbir.gov/about">SBIR.gov - About</a> · <a href="https://www.sbir.gov/awards/annual-reports">SBIR Awards Database</a></div>
+    </div>
+
+    <div class="discovery">
+      <div class="discovery-header">
+        <h3>HHMI's Long-Term Bets</h3>
+        <span class="badge badge-major">Major</span>
+      </div>
+      <p><a href="https://www.hhmi.org/">Howard Hughes Medical Institute</a> funds investigators, not projects—<a href="https://www.hhmi.org/news/hhmi-announces-largest-ever-competition-investigators">$200M+/year</a> to researchers with freedom to pursue risky science. HHMI alumni have founded dozens of biotechs. <a href="https://www.hhmi.org/scientists/jennifer-doudna">Jennifer Doudna</a>, <a href="https://www.hhmi.org/scientists/david-r-liu">David Liu</a> (base editing), and <a href="https://www.hhmi.org/scientists/feng-zhang">Feng Zhang</a> were all HHMI investigators.</p>
+      <div class="sources">Sources: <a href="https://www.hhmi.org/">HHMI</a> · <a href="https://www.hhmi.org/scientists/jennifer-doudna">Doudna</a> · <a href="https://www.hhmi.org/scientists/david-r-liu">David Liu</a> · <a href="https://www.hhmi.org/scientists/feng-zhang">Feng Zhang</a></div>
+    </div>
+  </section>
+
+  <section id="vc">
+    <h2>VC Academic Strategies</h2>
+
+    <div class="discovery">
+      <div class="discovery-header">
+        <h3>Arch Venture's University Strategy</h3>
+        <span class="badge badge-major">Major</span>
+      </div>
+      <p>Arch Venture Partners specifically targets academic research. They funded Illumina (Tufts/Cambridge), Juno (Fred Hutch), and Grail. Managing partner Robert Nelsen calls universities "the best R&D departments."</p>
+      <div class="sources">Sources: Arch Venture Partners portfolio, Robert Nelsen interviews</div>
+    </div>
+
+    <div class="discovery">
+      <div class="discovery-header">
+        <h3>Third Rock Ventures Formation Model</h3>
+        <span class="badge badge-major">Major</span>
+      </div>
+      <p>Third Rock creates biotechs from scratch around academic science. They recruit academic founders, provide $50-100M Series A, build teams. Companies include Agios, Bluebird Bio, Relay Therapeutics.</p>
+      <div class="sources">Sources: Third Rock Ventures portfolio, Agios founding story</div>
+    </div>
+
+    <div class="discovery">
+      <div class="discovery-header">
+        <h3>Atlas Venture's Academic Network</h3>
+        <span class="badge badge-notable">Notable</span>
+      </div>
+      <p>Atlas maintains formal university relationships - scientific advisory boards staffed by professors, exclusive first-looks at research. Network as competitive advantage.</p>
+      <div class="sources">Sources: Atlas Venture portfolio, Academic partnership announcements</div>
+    </div>
+  </section>
+
+  <section id="models">
+    <h2>Notable: Different Models</h2>
+
+    <div class="discovery">
+      <div class="discovery-header">
+        <h3>Regeneron's Science-First Culture</h3>
+        <span class="badge badge-major">Major</span>
+      </div>
+      <p>Regeneron maintained academic culture inside a company. 30%+ of revenue to R&D, internal discovery vs. licensing. Eylea, Dupixent, COVID antibodies followed. $75B market cap validates the model.</p>
+      <div class="sources">Sources: Regeneron annual reports, Yancopoulos interviews</div>
+    </div>
+
+    <div class="discovery">
+      <div class="discovery-header">
+        <h3>Scripps Research Drug Discovery</h3>
+        <span class="badge badge-notable">Notable</span>
+      </div>
+      <p>Scripps Research operates more like a biotech than a university. Peter Schultz's work on unnatural amino acids led to Ambrx (now J&J). Institute-as-startup-factory model.</p>
+      <div class="sources">Sources: Scripps Research Institute, Ambrx founding</div>
+    </div>
+
+    <div class="discovery">
+      <div class="discovery-header">
+        <h3>WARF: The Original Model</h3>
+        <span class="badge badge-notable">Notable</span>
+      </div>
+      <p>UW-Madison's Wisconsin Alumni Research Foundation invented university tech transfer in 1925. Still generating $100M+ annually. Their biotech alumni network angels new spinouts.</p>
+      <div class="sources">Sources: WARF annual reports, UW-Madison biotech alumni</div>
+    </div>
+  </section>
+
+  <section id="trends">
+    <h2>Current Trends (2023-24)</h2>
+
+    <div class="discovery">
+      <div class="discovery-header">
+        <h3>AI Drug Discovery Academic Link</h3>
+        <span class="badge badge-major">Major</span>
+      </div>
+      <p>AI drug discovery companies have strong academic ties. Daphne Koller (Stanford AI) founded Insitro. Recursion, Insilico hire heavily from computational biology PhDs. ML-biotech convergence through university talent.</p>
+      <div class="sources">Sources: Insitro founding, Recursion academic collaborations</div>
+    </div>
+
+    <div class="discovery">
+      <div class="discovery-header">
+        <h3>2023-24 Funding Crunch Impact</h3>
+        <span class="badge badge-notable">Notable</span>
+      </div>
+      <p>The 2023-24 biotech downturn hit academic spinouts hard. Series A rounds scarce, valuations dropped 50%+. Some professors delayed commercialization. Quality bar rising.</p>
+      <div class="sources">Sources: PitchBook biotech data, BioCentury funding analysis</div>
+    </div>
+
+    <div class="discovery">
+      <div class="discovery-header">
+        <h3>Deerfield's Academic Partnerships</h3>
+        <span class="badge badge-notable">Notable</span>
+      </div>
+      <p>Deerfield Management provides upfront funding to universities ($50M to Purdue) in exchange for commercialization rights. Investment firms becoming R&D funders directly.</p>
+      <div class="sources">Sources: Deerfield Management announcements, Purdue partnership</div>
+    </div>
+  </section>
+
+  <section id="fda510k">
+    <h2>Latest FDA 510(k) Clearances</h2>
+    <p>The <a href="https://www.fda.gov/medical-devices/device-approvals-and-clearances/510k-clearances">FDA 510(k) process</a> clears ~3,300 medical devices annually. In 2025, <a href="https://innolitics.com/articles/year-in-review-ai-ml-medical-device-k-clearances/">295 AI/ML-enabled devices</a> received clearance. Here are the 20 most recent clearances with academic and commercial significance.</p>
+
+    <h3>January 2026</h3>
+
+    <div class="discovery">
+      <div class="discovery-header">
+        <h3>AccurKardia AccurECG 2.0</h3>
+        <span class="badge badge-major">AI/ECG</span>
+      </div>
+      <p><a href="https://www.businesswire.com/news/home/20260108244444/en/AccurKardia-Secures-FDA-510k-Clearance-of-and-Launches-AccurECG-2.0">K252361 cleared January 8, 2026</a>. Enterprise-grade, device-agnostic ECG interpretation platform with AI-powered analysis. Second FDA clearance for the AccurECG platform, designed for scale and flexible integrations.</p>
+    </div>
+
+    <div class="discovery">
+      <div class="discovery-header">
+        <h3>StimLabs Allacor P & Theracor</h3>
+        <span class="badge badge-breakthrough">Regenerative</span>
+      </div>
+      <p><a href="https://www.prnewswire.com/news-releases/stimlabs-llc-announces-launch-of-allacor-p---the-first-fda-510k-cleared-human-umbilical-cord-particulate-device-for-wound-management-302651783.html">Cleared January 5, 2026</a>. First FDA 510(k) cleared human umbilical cord particulate device for wound management. Theracor is first umbilical cord-derived ECM device.</p>
+    </div>
+
+    <div class="discovery">
+      <div class="discovery-header">
+        <h3>HeartLung AI-CVD Platform</h3>
+        <span class="badge badge-major">AI/Cardiology</span>
+      </div>
+      <p><a href="https://www.dicardiology.com/content/fda-clears-heartlungs-imaging-platform">K252029 cleared January 2026</a>. AI-powered quantitative imaging platform that extracts cardiovascular, metabolic, and skeletal risk insights from routine CT scans.</p>
+    </div>
+
+    <h3>December 2025</h3>
+
+    <div class="discovery">
+      <div class="discovery-header">
+        <h3>BlueWind Revi System (Enhanced)</h3>
+        <span class="badge badge-major">Neuromodulation</span>
+      </div>
+      <p><a href="https://www.urologytimes.com/view/fda-grants-510-k-clearance-to-enhanced-revi-system-for-urgency-urinary-incontinence">Cleared December 16, 2025</a>. Enhanced implantable tibial neuromodulation (iTNM) device for urgency urinary incontinence. Wireless, rechargeable neurostimulator with updated wearable.</p>
+    </div>
+
+    <div class="discovery">
+      <div class="discovery-header">
+        <h3>SleepRes Kricket PAP with KPAP</h3>
+        <span class="badge badge-major">Sleep Medicine</span>
+      </div>
+      <p><a href="https://aasm.org/fda-clears-kricket-pap-device-with-kpap-from-sleepres/">Cleared December 17, 2025</a>. Novel PAP device powered by Kairos Positive Airway Pressure technology for obstructive sleep apnea treatment in patients over 66 lbs.</p>
+    </div>
+
+    <div class="discovery">
+      <div class="discovery-header">
+        <h3>3D Systems VSP Orthopedics (Expanded)</h3>
+        <span class="badge badge-major">Surgical Planning</span>
+      </div>
+      <p><a href="https://investor.3dsystems.com/news/news-details/2025/3D-Systems-Announces-FDA-510k-Clearance-Expanding-VSP-Orthopedics-Indications-to-Include-Skeletally-Mature-Adolescents/default.aspx">Cleared December 15, 2025</a>. Virtual surgical planning platform expanded to skeletally mature adolescents for osteosarcoma and Ewing sarcoma cases.</p>
+    </div>
+
+    <div class="discovery">
+      <div class="discovery-header">
+        <h3>Vektor Medical vMap (Next-Gen)</h3>
+        <span class="badge badge-major">Cardiac Mapping</span>
+      </div>
+      <p><a href="https://www.businesswire.com/news/home/20251210496502/en/Vektor-Medical-Receives-FDA-510k-Clearance-Adding-Atrial-Flutter-Mapping-Enhanced-Connectivity-and-New-Integration-Capabilities-to-Next-Generation-vMap">Cleared December 10, 2025</a>. Non-invasive cardiac mapping expanded with atrial flutter capability, ECG streaming, and Software as a Medical Device (SaMD) designation.</p>
+    </div>
+
+    <div class="discovery">
+      <div class="discovery-header">
+        <h3>ProVerum ProVee System</h3>
+        <span class="badge badge-major">Urology</span>
+      </div>
+      <p><a href="https://www.urologytimes.com/view/fda-updates-in-urology-december-2025">Cleared December 9, 2025</a>. First of new generation prostatic urethral stents for BPH treatment, based on phase 3 ProVIDE study results.</p>
+    </div>
+
+    <div class="discovery">
+      <div class="discovery-header">
+        <h3>Atraverse HOTWIRE Transseptal System</h3>
+        <span class="badge badge-major">Cardiology</span>
+      </div>
+      <p><a href="https://www.prnewswire.com/news-releases/atraverse-medical-secures-fda-510k-clearance-for-hotwire-rf-generator--fully-integrated-transseptal-access-system-302631993.html">Cleared December 4, 2025</a>. Fully integrated RF-powered transseptal access system for left-heart procedures.</p>
+    </div>
+
+    <div class="discovery">
+      <div class="discovery-header">
+        <h3>Natus BrainWatch (Seizure Detection)</h3>
+        <span class="badge badge-major">Neurology</span>
+      </div>
+      <p><a href="https://www.prnewswire.com/news-releases/natus-announces-fda-510k-clearance-for-electrographic-status-epilepticus-diagnostic-indication-in-brainwatch-point-of-care-eeg-solution-302631532.html">Cleared December 3, 2025</a>. Point-of-care EEG with electrographic status epilepticus diagnostic indication. AI-powered seizure detection at bedside.</p>
+    </div>
+
+    <div class="discovery">
+      <div class="discovery-header">
+        <h3>Medtronic Hugo RAS (Urology Expanded)</h3>
+        <span class="badge badge-major">Robotic Surgery</span>
+      </div>
+      <p><a href="https://www.urologytimes.com/view/fda-updates-in-urology-december-2025">Cleared December 3, 2025</a>. Hugo robotic-assisted surgery system cleared for urologic procedures including prostatectomy, nephrectomy, cystectomy. 98.5% surgical success in Expand URO IDE study.</p>
+    </div>
+
+    <div class="discovery">
+      <div class="discovery-header">
+        <h3>Francis Medical Vanquish (Prostate Cancer)</h3>
+        <span class="badge badge-breakthrough">Oncology</span>
+      </div>
+      <p><a href="https://www.urologytimes.com/view/fda-updates-in-urology-december-2025">Cleared December 2, 2025</a>. Water vapor ablation system cleared for intermediate-risk localized prostate cancer based on VAPOR 2 trial 12-month data. Expands beyond BPH indication.</p>
+    </div>
+
+    <div class="discovery">
+      <div class="discovery-header">
+        <h3>HeartBeam 12-Lead ECG Synthesis</h3>
+        <span class="badge badge-major">AI/Cardiology</span>
+      </div>
+      <p><a href="https://www.dicardiology.com/content/heartbeam-earns-fda-clearance-12-lead-synthesis-software">Cleared December 2025</a>. Software synthesizes 12-lead ECG from limited-lead input for arrhythmia assessment. Limited U.S. launch Q1 2026 with concierge cardiology.</p>
+    </div>
+
+    <h3>November 2025</h3>
+
+    <div class="discovery">
+      <div class="discovery-header">
+        <h3>Maxx Orthopedics Libertas Bipolar Hip</h3>
+        <span class="badge badge-notable">Orthopedics</span>
+      </div>
+      <p><a href="https://orthospinenews.com/2025/11/17/maxx-orthopedics-announces-fda-510k-clearance-for-libertas-bipolar-hip-system/">Cleared November 15, 2025</a>. Bipolar hip system from expanding global orthopedics company.</p>
+    </div>
+
+    <div class="discovery">
+      <div class="discovery-header">
+        <h3>Meduloc Fracture Fixation System</h3>
+        <span class="badge badge-notable">Orthopedics</span>
+      </div>
+      <p><a href="https://www.prnewswire.com/news-releases/meduloc-receives-fda-510k-clearance-for-novel-orthopedic-fracture-fixation-system-302611673.html">Cleared November 12, 2025</a>. Intramedullary fixation with flexible nitinol implant and deployable prong locking. Covers metacarpal, radius, ulna, clavicle, fibula fractures.</p>
+    </div>
+
+    <div class="discovery">
+      <div class="discovery-header">
+        <h3>Philips Cardiovascular Workspace</h3>
+        <span class="badge badge-major">Imaging/AI</span>
+      </div>
+      <p><a href="https://www.usa.philips.com/a-w/about/news/archive/standard/news/articles/2025/philips-receives-fda-510-k-clearance-for-cardiovascular-workspace.html">Cleared November 2025</a>. Cloud-enabled cardiovascular platform foundation for AI tools and workflow insights across cardiology care continuum.</p>
+    </div>
+
+    <div class="discovery">
+      <div class="discovery-header">
+        <h3>Adaptix Ortho350</h3>
+        <span class="badge badge-notable">Imaging</span>
+      </div>
+      <p><a href="https://www.itnonline.com/content/fda-grants-510k-clearance-adaptix-ortho350">Cleared November 10, 2025</a>. Compact, mobile, low-dose 3D X-ray orthopedic imaging system at point-of-care. Digital tomosynthesis technology.</p>
+    </div>
+
+    <div class="discovery">
+      <div class="discovery-header">
+        <h3>YorLabs Intracardiac Imaging System</h3>
+        <span class="badge badge-notable">Cardiology</span>
+      </div>
+      <p><a href="https://www.itnonline.com/content/intracardiac-imaging-system-gets-fda-510k-clearance">Cleared October 2025</a>. Zero-capex ultrasound platform for cath lab workflow simplification. Limited U.S. release planned 2026.</p>
+    </div>
+
+    <div class="discovery">
+      <div class="discovery-header">
+        <h3>Heartflow Plaque Analysis (Next-Gen)</h3>
+        <span class="badge badge-major">AI/Cardiology</span>
+      </div>
+      <p><a href="https://www.dicardiology.com/content/heartflow-plaque-analysis-platform-receives-fda-510k-clearance">Cleared September 2025</a>. Only FDA-cleared AI plaque quantification tool with 95% agreement with IVUS gold standard. Non-invasive coronary analysis from CCTA.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Ready-to-Post Bluesky Thread</h2>
+    <p>All 30 discoveries are formatted as Bluesky posts in the <a href="data/discoveries.json">discoveries.json</a> file. Run the script locally to post:</p>
+    <pre style="background: var(--card-bg); padding: 1rem; border-radius: 8px; overflow-x: auto;">
+git clone https://github.com/minormobius/Mansion
+cd Mansion
+npm install
+# Add your credentials to .env
+npx tsx run-biotech-research.ts</pre>
+  </section>
+
+  <footer>
+    <p><strong>Part of:</strong> <a href="index.html">Mansion Research</a></p>
+    <p>Generated by <a href="https://github.com/minormobius/Mansion">Mansion Agent Swarm</a> using multi-perspective dialectical methodology.</p>
+    <p><em>Deep dives:</em> <a href="valley-of-death.html">The Valley of Death</a> | <a href="upenn-gene-therapy.html">UPenn Gene Therapy</a> | <a href="carl-june.html">Carl June</a></p>
+  </footer>
+</body>
+</html>

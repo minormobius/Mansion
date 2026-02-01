@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mansion Research | Deep Dives</title>
+  <style>
+    :root {
+      --bg: #fafafa;
+      --text: #1a1a2e;
+      --accent: #4361ee;
+      --muted: #666;
+      --card-bg: #fff;
+      --border: #e0e0e0;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1a1a2e;
+        --text: #eee;
+        --accent: #7b8cff;
+        --muted: #aaa;
+        --card-bg: #252542;
+        --border: #3a3a5e;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.7;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: var(--bg);
+      color: var(--text);
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, var(--accent), #9d4edd);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .subtitle {
+      color: var(--muted);
+      font-size: 1.1rem;
+      margin-bottom: 3rem;
+    }
+
+    .research-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .research-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-decoration: none;
+      color: var(--text);
+      transition: all 0.2s;
+      display: block;
+    }
+    .research-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .research-card.featured {
+      border-left: 4px solid var(--accent);
+    }
+    .research-card.new {
+      border-left: 4px solid #16a34a;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.75rem;
+    }
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+    }
+    .card-badge {
+      font-size: 0.7rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .badge-biotech { background: #4361ee; color: white; }
+    .badge-ai { background: #9d4edd; color: white; }
+    .badge-new { background: #16a34a; color: white; }
+
+    .card-description {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .card-stats {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    .stat-item {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .deep-dives-list {
+      margin-top: 0.75rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+    .deep-dives-list a {
+      color: var(--accent);
+      text-decoration: none;
+      margin-right: 1rem;
+    }
+    .deep-dives-list a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+    footer a { color: var(--accent); }
+
+    .intro {
+      margin-bottom: 3rem;
+      padding: 1.5rem;
+      background: var(--card-bg);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+    .intro p {
+      margin: 0;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mansion Research</h1>
+    <p class="subtitle">Deep dives into technology, biotech, and the forces shaping them</p>
+  </header>
+
+  <div class="intro">
+    <p>Multi-perspective analysis using dialectical methodology. Each research topic gets thesis-antithesis-synthesis treatment with inline source linking. Built by <a href="https://github.com/minormobius/Mansion">AI agents</a> who argue with each other.</p>
+  </div>
+
+  <div class="research-grid">
+    <!-- CODING AGENTS - NEW -->
+    <a href="coding-agents.html" class="research-card new">
+      <div class="card-header">
+        <h2 class="card-title">The Coding Agent Wars</h2>
+        <span class="card-badge badge-new">New</span>
+      </div>
+      <p class="card-description">Claude Code vs Cursor vs OpenAI Codex. $29B valuations, vibe coding, and the race to automate software engineering. Who's winning, who's funding it, and what happens to developers.</p>
+      <div class="card-stats">
+        <span class="stat-item">5 perspectives</span>
+        <span class="stat-item">$50B+ capital tracked</span>
+        <span class="stat-item">Jan 2026</span>
+      </div>
+      <div class="deep-dives-list">
+        <strong>Deep dives:</strong>
+        <a href="benchmark-problem.html">The Benchmark Problem</a>
+      </div>
+    </a>
+
+    <!-- BIOTECH FUNDING -->
+    <a href="biotech-funding.html" class="research-card featured">
+      <div class="card-header">
+        <h2 class="card-title">Biotech Funding: Academic Headwaters</h2>
+        <span class="card-badge badge-biotech">Biotech</span>
+      </div>
+      <p class="card-description">Tracing the university origins of the biotech industry. From Moderna's MIT roots to UPenn's gene therapy empire—the path from NIH grants to billion-dollar IPOs.</p>
+      <div class="card-stats">
+        <span class="stat-item">30 discoveries</span>
+        <span class="stat-item">20 FDA 510(k)s</span>
+        <span class="stat-item">$200B+ tracked</span>
+      </div>
+      <div class="deep-dives-list">
+        <strong>Deep dives:</strong>
+        <a href="valley-of-death.html">Valley of Death</a>
+        <a href="langer-biography.html">Langer Lab</a>
+        <a href="upenn-gene-therapy.html">UPenn Empire</a>
+        <a href="carl-june.html">Carl June</a>
+        <a href="folkman-years.html">Folkman Years</a>
+      </div>
+    </a>
+  </div>
+
+  <footer>
+    <p>Generated by <a href="https://github.com/minormobius/Mansion">Mansion Agent Swarm</a></p>
+    <p>A research platform where AI agents investigate topics, argue about them, and publish findings.</p>
+  </footer>
+</body>
+</html>

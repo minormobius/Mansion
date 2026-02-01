@@ -1,0 +1,70 @@
+BIOTECH FUNDING: ACADEMIC HEADWATERS
+=====================================
+30 Ready-to-Post Bluesky Discoveries
+Copy/paste these or run the script to auto-post as a thread.
+
+---
+
+1. [BREAKTHROUGH] Moderna's origin story is wild - Derrick Rossi's Harvard lab work on modified mRNA, licensed through MIT's tech transfer office, NIH-funded research. Academic science to $100B+ market cap. The university-to-pharma pipeline at its most consequential.
+
+2. [BREAKTHROUGH] The CRISPR patent wars between UC Berkeley and Broad Institute weren't just legal drama - they revealed billions in commercial value sitting in academic labs. Doudna's NIH/HHMI-funded work spawned Caribou, Mammoth, Intellia. Basic science grants becoming billion-dollar platforms.
+
+3. [BREAKTHROUGH] Bob Langer's MIT lab is basically a biotech startup factory. 40+ companies including Moderna. 400+ PhD students who've started their own ventures. Decades of NIH grants funding drug delivery research that became an entire industry vertical.
+
+4. [BREAKTHROUGH] CAR-T's path: Carl June's UPenn lab, NIH + Leukemia Society grants, Novartis license in 2012 for $20M upfront. Now Kymriah costs $475K per treatment. Academic immunology becoming cancer medicine's future. Penn's royalty checks must be something.
+
+5. [BREAKTHROUGH] BioNTech's founders Sahin and Tureci were University of Mainz cancer researchers. German government grants funded their mRNA work. They pivoted to COVID in a weekend. Academic oncology saving millions. Not Silicon Valley - Mainz, Germany.
+
+6. [BREAKTHROUGH] UPenn built a gene therapy empire. Jim Wilson (AAV), Carl June (CAR-T), Jean Bennett (Luxturna, first FDA-approved gene therapy). Spark sold to Roche for $4.3B. One university dominating an entire therapeutic modality.
+
+7. [MAJOR] Flagship Pioneering flipped the academic spinout model. Instead of waiting for professors to start companies, they scout university research, create the company themselves, bring in management. 40+ companies, $30B+ value. Moderna was #26.
+
+8. [MAJOR] Stanford's tech transfer office basically invented the modern model in 1970. $2B+ cumulative licensing revenue. Genentech in '76, Guardant Health recently. Every university copies their playbook now.
+
+9. [MAJOR] NIH SBIR grants are the quiet engine of academic biotech. $275K Phase I, $1M+ Phase II - non-dilutive funding that lets professor-founders de-risk before VCs. Amgen, Genzyme, Geron all started this way. Government money seeding private innovation.
+
+10. [MAJOR] Arch Venture Partners treats universities as outsourced R&D. They funded Illumina from Tufts research, Juno from Fred Hutch, Grail. Managing partner Nelsen: universities are 'the best R&D departments in the world.' VCs as academic talent scouts.
+
+11. [MAJOR] The Broad Institute's trick: nonprofit academic research institute, but the membrane to commercial spinouts is deliberately permeable. Stanley's $650M gift, NIH grants, Lilly money in - Editas, Celsius, and others out. Hybrid model working.
+
+12. [MAJOR] Regeneron's bet: keep academic culture inside the company. 30%+ of revenue to R&D, discover internally vs. license. Eylea, Dupixent, COVID antibodies followed. $75B market cap validates the science-first model. Counter-example to pure spinout plays.
+
+13. [MAJOR] HHMI's model: fund people not projects, let them take risks. $200M+/year. Doudna (CRISPR), David Liu (base editing), Feng Zhang - all HHMI investigators. Patient capital for high-risk academic science that spawns industries.
+
+14. [MAJOR] Third Rock's playbook: scout academic science, recruit professor as co-founder, write $50-100M Series A, build professional team around them. Agios, Bluebird Bio, Relay. The VC as company-builder, not just investor.
+
+15. [MAJOR] Seattle's secret: Fred Hutch Cancer Center. Juno Therapeutics came out of there - sold to Celgene for $9B. NIH cancer center funding plus local VC (Gates money included) built an immunotherapy cluster outside the usual hubs.
+
+16. [MAJOR] AI drug discovery companies have deep academic roots. Daphne Koller (Stanford AI) founded Insitro. Recursion, Insilico hire comp bio PhDs, license academic datasets. The ML-biotech convergence happening through university talent pipelines.
+
+17. [NOTABLE] Johns Hopkins brought the defense R&D model (via Applied Physics Lab) to biomedical commercialization. That approach - mission-driven research with commercial pathways built in - is spreading to other academic medical centers.
+
+18. [NOTABLE] Vertex ($90B market cap) didn't spin directly from academia but shows another model: ex-pharma founders who know how to pull academic chemistry through commercial development. Their CF drugs trace back to university med chem work.
+
+19. [NOTABLE] Washington University in St. Louis quietly became a gene therapy cluster. Rare disease genetics strength (NIH NCATS funded) feeding spinouts like Abeona. Not Boston, not Bay Area - the Midwest has its own biotech ecosystem growing.
+
+20. [NOTABLE] Duke cracked something: engineering school + medical school collaboration for gene therapy translation. Gersbach's lab work, NIH/DARPA funded, spinning into companies. The bioengineering bridge is where the startups emerge.
+
+21. [NOTABLE] UCSD and Torrey Pines biotech corridor have a symbiotic thing going. Professors consult, postdocs flow both directions, companies sponsor labs. Illumina, Dexcom, Neurocrine all connected. Geographic proximity still matters in biotech.
+
+22. [NOTABLE] The NIH Director's Pioneer Award is interesting: $5M for ideas too weird for normal study sections. Explicitly high-risk. Some of that research became companies. Government funding unconventional science that VCs wouldn't touch early.
+
+23. [NOTABLE] Even Rockefeller University - the ivory tower's ivory tower - is commercializing now. Leptin obesity research, HIV broadly neutralizing antibodies, basic biology becoming startups. Pure science institutions joining the translation game.
+
+24. [NOTABLE] Atlas Venture plays the long game: formal academic advisory boards, first-look deals with universities, relationships with key professors. When science is ready to commercialize, they're already in the room. Network as competitive advantage.
+
+25. [NOTABLE] Scripps Research blurs the academic/industry line deliberately. Peter Schultz's unnatural amino acids became Ambrx (now J&J). They run drug discovery like a biotech inside academia. The institute-as-startup-factory model.
+
+26. [NOTABLE] Massachusetts bet $1B (state money) on keeping academic biotech local. Life Sciences Center: grants, tax breaks, infrastructure. Preventing research from being licensed to out-of-state companies. State-level industrial policy for the knowledge economy.
+
+27. [NOTABLE] Reality check: 2023-24 biotech funding crunch hit academic spinouts hard. Series A rounds scarce, valuations down 50%+. Some professors delayed commercialization. The easy-money era for academic entrepreneurship is over. Quality bar rising.
+
+28. [NOTABLE] Deerfield's academic play: give universities $50M upfront in exchange for commercialization rights to drug discovery programs. Not waiting for patents - funding the research directly. Investment firms becoming R&D funders.
+
+29. [NOTABLE] Caltech's spinout strategy: fewer companies, higher concentration. Amgen came from there. They focus computational biology and materials science. Small school betting on quality over quantity. Different model than Stanford's volume approach.
+
+30. [NOTABLE] UW-Madison invented the university tech transfer model in 1925 (WARF). Still generating $100M+ annually. Their biotech alumni network (Promega founder, others) angels new spinouts. Century-old model still producing returns.
+
+---
+
+END OF THREAD
